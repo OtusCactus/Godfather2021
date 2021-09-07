@@ -14,10 +14,12 @@ public class GameManager : MonoBehaviour
 
     public static Player player;
 
+    public System.Action onStateChange;
+
     [Header("Settings")]
     [SerializeField] private float roundTime = 60;
     private float currentTime = 0;
-    private GameState state;
+    public GameState state;
     private GameState previousState;
     private bool canPlay = false;
 
@@ -35,8 +37,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ChangeState(GameState.INGAME);
-        currentTime = roundTime;
+        ChangeState(GameState.MENU);
     }
 
     // Update is called once per frame
@@ -65,6 +66,10 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.INGAME:
                 {
+                    if(previousState == GameState.MENU)
+                    {
+                        currentTime = roundTime;
+                    }
                     canPlay = true;
                 }
                 break;
@@ -80,5 +85,6 @@ public class GameManager : MonoBehaviour
         }
         previousState = state;
         state = newState;
+        if (onStateChange != null) onStateChange.Invoke();
     }
 }
