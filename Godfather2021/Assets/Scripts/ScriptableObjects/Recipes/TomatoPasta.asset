@@ -14,4 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientsList:
   - {fileID: 11400000, guid: 8d1c5f238b21d0f40bc3a0285346335f, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 72a1f2d6bc5eb284bb37fd6444fc238b, type: 2}
+  ingredientsStateList:
+  - isCut: 1
+    isCooked: 0
+    isChecked: 0
+  - isCut: 0
+    isCooked: 0
+    isChecked: 0

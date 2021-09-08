@@ -9,20 +9,6 @@ public class Plate : MonoBehaviour, IDropHandler
     public List<Ingredients> recipeIngredients = new List<Ingredients>();
     public List<IngredientState> recipeIngredientsState;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-
-        }
-    }
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -32,8 +18,6 @@ public class Plate : MonoBehaviour, IDropHandler
             eventData.pointerDrag.gameObject.SetActive(false);
             recipeIngredients.Add(eventData.pointerDrag.GetComponent<IngredientManager>().myIngredient);
             recipeIngredientsState.Add(eventData.pointerDrag.GetComponent<IngredientManager>().state);
-            //eventData.pointerDrag.GetComponent<DragDrop>().previousPos = GetComponent<RectTransform>().position;
-            //eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
         }
     }
 }

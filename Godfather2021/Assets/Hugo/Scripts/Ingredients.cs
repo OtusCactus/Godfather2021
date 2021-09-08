@@ -7,4 +7,5 @@ public class Ingredients : ScriptableObject
     public string name = "";
     public Sprite[] sprites;
     public Color[] colors;
+    public string type = "red";
 }
