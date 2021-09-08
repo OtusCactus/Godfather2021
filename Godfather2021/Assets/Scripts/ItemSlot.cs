@@ -5,6 +5,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 {
 
     public bool isOccupied = false;
+    public GameObject myItem;
     public bool isKnife = false;
 
     public void OnDrop(PointerEventData eventData)
@@ -19,6 +20,13 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                     eventData.pointerDrag.GetComponent<IngredientManager>().Cut();
                     print("couper slot");
                 }
+                else
+                {
+                    if (myItem.GetComponent<IngredientManager>())
+                    {
+                        myItem.GetComponent<IngredientManager>().Cut();
+                    }
+                }
                 eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = false;
             }
             else
@@ -28,6 +36,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
                 eventData.pointerDrag.GetComponent<DragDrop>().currentSlot = this;
                 isOccupied = true;
+                myItem = eventData.pointerDrag.gameObject;
             }
         }
     }

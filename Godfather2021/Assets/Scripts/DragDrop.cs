@@ -27,6 +27,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         droppedOnSlot = false;
         previousSlot = currentSlot; 
         currentSlot.isOccupied = false;
+        currentSlot.myItem = null;
         currentSlot = null;
         if (onDraggingBegin != null) onDraggingBegin.Invoke();
     }
@@ -47,6 +48,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             rectTransform.position = previousPos;
             currentSlot = previousSlot;
             currentSlot.isOccupied = true;
+            currentSlot.myItem = gameObject;
         }
 
         if (onDraggingEnd != null) onDraggingEnd.Invoke();
