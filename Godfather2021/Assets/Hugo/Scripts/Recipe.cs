@@ -8,6 +8,44 @@ public class IngredientState
 {
     public bool isCut = false;
     public bool isCooked = false;
+    public bool isChecked = false;
+
+    public static bool operator ==(IngredientState a, IngredientState b)
+    {
+        if(a.isCut == b.isCut)
+        {
+            if(a.isCooked == b.isCooked)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public static bool operator !=(IngredientState a, IngredientState b)
+    {
+        if (a.isCut == b.isCut)
+        {
+            if (a.isCooked == b.isCooked)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else
+        {
+            return true;
+        }
+    }
 }
 
 [CreateAssetMenu(fileName = "New Recipe", menuName = "Game ScriptObj/Recipe", order = 1)]

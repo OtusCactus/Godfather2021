@@ -5821,8 +5821,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipes: []
-  recipe: {fileID: 0}
+  recipe: {fileID: 11400000, guid: 988b5515b6896e14fbc203835018da30, type: 2}
   recipient: {fileID: 0}
+  plate: {fileID: 1420147651}
 --- !u!1 &1420147649
 GameObject:
   m_ObjectHideFlags: 0
