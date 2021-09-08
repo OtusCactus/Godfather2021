@@ -9,10 +9,12 @@ public class CookingTimer : MonoBehaviour
     public float maxTimer;
     public Image timerImage;
 
-    [SerializeField] private bool mixer;
-    [SerializeField] private bool pan;
+    //[SerializeField] private bool mixer;
+    //[SerializeField] private bool pan;
 
-    private bool timeStart = false;
+    public bool timeStart = false;
+
+    public List<GameObject> ingredientsInPan = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -24,17 +26,17 @@ public class CookingTimer : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.P) && pan && !mixer)
-        {
-            timeStart = true;
-            actualTimer = maxTimer;
-        }
+        //if (Input.GetKeyDown(KeyCode.P) && pan && !mixer)
+        //{
+        //    timeStart = true;
+        //    actualTimer = maxTimer;
+        //}
 
-        if (Input.GetKeyDown(KeyCode.M) && !pan && mixer)
-        {
-            timeStart = true;
-            actualTimer = maxTimer;
-        }
+        //if (Input.GetKeyDown(KeyCode.M) && !pan && mixer)
+        //{
+        //    timeStart = true;
+        //    actualTimer = maxTimer;
+        //}
 
         if (timeStart)
         {
@@ -42,6 +44,11 @@ public class CookingTimer : MonoBehaviour
             timerImage.fillAmount = actualTimer / maxTimer;
             if(actualTimer <= 0)
             {
+                for(int i = 0; i < ingredientsInPan.Count; i++)
+                {
+                    ingredientsInPan[i].GetComponent<IngredientManager>().state.isCooked = true;
+                }
+
                 timeStart = false;
                 actualTimer = 0;
                 StartCoroutine("TimerBack");
@@ -51,7 +58,7 @@ public class CookingTimer : MonoBehaviour
 
     IEnumerator TimerBack()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         actualTimer = maxTimer;
         timerImage.fillAmount = actualTimer / maxTimer;

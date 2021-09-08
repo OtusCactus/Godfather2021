@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
             return;
         }
         instance = this;
-        player = ReInput.players.GetPlayer(0);
     }
 
     // Start is called before the first frame update
