@@ -13,8 +13,8 @@ public class GridManager : MonoBehaviour
     private bool rowCounted = false;
     [SerializeField] private GameObject item;
     [SerializeField] private GameObject knife;
-    [SerializeField] private Vector2 spawnIndex = Vector2.zero;
-    [SerializeField] TextAsset gridData;
+    [SerializeField] private TextAsset gridData;
+    [SerializeField] private List<Ingredients> allIngredients = new List<Ingredients>();
 
     // Start is called before the first frame update
     void Start()
@@ -94,6 +94,15 @@ public class GridManager : MonoBehaviour
             else
             {
                 go = Instantiate(item, correctPos, Quaternion.identity);
+                foreach (Ingredients ingredient in allIngredients)
+                {
+                    if(ingredient.name == name)
+                    {
+                        go.GetComponent<IngredientManager>().myIngredient = ingredient;
+                        go.GetComponent<IngredientManager>().Initialize();
+                        break;
+                    }
+                }
             }
             go.transform.SetParent(InterfaceManager.instance.gamePanel.transform, true);
         }
