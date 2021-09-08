@@ -5,13 +5,13 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 {
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-    public bool miaou = true;
+    [HideInInspector] public Vector2 previousPos;
 
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        miaou = true;
+        previousPos = rectTransform.position;
     }
 
     public void OnBeginDrag(PointerEventData eventData)

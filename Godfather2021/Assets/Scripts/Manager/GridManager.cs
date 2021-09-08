@@ -12,6 +12,7 @@ public class GridManager : MonoBehaviour
     private int row = 0;
     private bool rowCounted = false;
     [SerializeField] private GameObject item;
+    [SerializeField] private GameObject knife;
     [SerializeField] private Vector2 spawnIndex = Vector2.zero;
     [SerializeField] TextAsset gridData;
 
@@ -47,9 +48,9 @@ public class GridManager : MonoBehaviour
             {
                 if (row[j] != "null" && row[j] != "null/r" && row[j] != "" && row[j] != "null ")
                 {
-                    print("it's : " + i + " & " + j + " = " + row[j] + " length " + row[j].Length);
+                    //print("it's : " + i + " & " + j + " = " + row[j] + " length " + row[j].Length);
                     Vector2 newPos = new Vector2(i, j);
-                    PlaceObjectOnGrid(newPos);
+                    PlaceObjectOnGrid(newPos, row[j]);
                 }
             }
         }
@@ -77,13 +78,20 @@ public class GridManager : MonoBehaviour
         return result.ToArray(); // Return array of all strings
     }
 
-    void PlaceObjectOnGrid(Vector2 placeOnGrid)
+    void PlaceObjectOnGrid(Vector2 placeOnGrid, string name)
     {
         int childIndex = (int)(placeOnGrid.y * column + placeOnGrid.x);
         if (childIndex < grid.transform.childCount) {
             Vector2 correctPos = grid.transform.GetChild(childIndex).GetComponent<RectTransform>().position;
-
-            GameObject go = Instantiate(item, correctPos, Quaternion.identity);
+            GameObject go = null;
+            if (name == "knife")
+            {
+                go = Instantiate(knife, correctPos, Quaternion.identity);
+            }
+            else
+            {
+                go = Instantiate(item, correctPos, Quaternion.identity);
+            }
             go.transform.SetParent(InterfaceManager.instance.gamePanel.transform, true);
         }
     }

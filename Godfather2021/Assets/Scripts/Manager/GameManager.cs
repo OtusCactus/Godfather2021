@@ -60,7 +60,6 @@ public class GameManager : MonoBehaviour
         {
             case GameState.MENU:
                 {
-                    print("in menu");
                     canPlay = false;
                 }
                 break;
