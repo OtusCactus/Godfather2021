@@ -9,16 +9,21 @@ public class LevelManager : MonoBehaviour
     public Recipe recipe;
     public Recipient recipient;
 
-    public int recipeAliment1;
-    public int recipeAliment2;
+    public Dictionary<string, bool> recipeIngredients = new Dictionary<string, bool>();
 
     // Start is called before the first frame update
     void Start()
     {
-        recipe = recipes[Random.Range(0, recipes.Count)];
+        if(recipes.Count != 0)
+        {
+            recipe = recipes[Random.Range(0, recipes.Count)];
+        }
 
-        recipeAliment1 = recipe.aliment1;
-        recipeAliment2 = recipe.aliment2;
+        recipeIngredients.Add("Pastas", recipe.pastas);
+        recipeIngredients.Add("Tomato Sauce", recipe.tomatoSauce);
+        recipeIngredients.Add("Meat", recipe.meat);
+        recipeIngredients.Add("Apple", recipe.apple);
+
     }
 
 }
