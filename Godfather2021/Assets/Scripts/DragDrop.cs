@@ -6,6 +6,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     [HideInInspector] public Vector2 previousPos;
+    [HideInInspector] public bool droppedOnSlot = false;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     {
         canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = .75f;
+        droppedOnSlot = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -30,7 +32,11 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = 1;
-        canvasGroup.blocksRaycasts = true;
+        canvasGroup.blocksRaycasts = true; 
+        if (droppedOnSlot == false)
+        {
+            rectTransform.position = previousPos;
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)

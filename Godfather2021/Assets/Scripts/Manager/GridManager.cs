@@ -46,11 +46,14 @@ public class GridManager : MonoBehaviour
 
             for (int j = 0; j < row.Length; j++)
             {
-                if (row[j] != "null" && row[j] != "null/r" && row[j] != "" && row[j] != "null ")
+                if (!row[j].Contains("null"))
                 {
-                    //print("it's : " + i + " & " + j + " = " + row[j] + " length " + row[j].Length);
-                    Vector2 newPos = new Vector2(i, j);
-                    PlaceObjectOnGrid(newPos, row[j]);
+                    if (row[j] != "null" && row[j] != "null/r" && row[j] != "" && row[j] != "null ")
+                    {
+                        print("it's : " + i + " & " + j + " = " + row[j] + " length " + row[j].Length);
+                        Vector2 newPos = new Vector2(j, i);
+                        PlaceObjectOnGrid(newPos, row[j]);
+                    }
                 }
             }
         }
