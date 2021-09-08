@@ -4304,6 +4304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2118685949}
   - component: {fileID: 2118685950}
+  - component: {fileID: 2118685951}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -4342,6 +4343,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d80bba8ce54fe2e43b8261ac26fdb510, type: 2}
   recipe: {fileID: 0}
   recipient: {fileID: 101054602}
+--- !u!114 &2118685951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118685948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e6e5ab1e50d7b48b1de5bd29ad4667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorUp: {fileID: 2800000, guid: 893b62d61c819e6468e59d327b7d7a58, type: 3}
+  cursorDown: {fileID: 2800000, guid: 9f3c73ec2d3b8614fab50cb9a855259f, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &2130024695
 GameObject:
   m_ObjectHideFlags: 0
