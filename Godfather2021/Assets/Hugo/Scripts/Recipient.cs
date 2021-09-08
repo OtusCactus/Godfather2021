@@ -19,20 +19,9 @@ public class Recipient : MonoBehaviour
 
     void Update()
     {
-        
-        if (recipe.pastas == levelManager.recipeIngredients["Pastas"] &&
-            recipe.tomatoSauce == levelManager.recipeIngredients["Tomato Sauce"] &&
-            recipe.meat == levelManager.recipeIngredients["Meat"] &&
-            recipe.apple == levelManager.recipeIngredients["Apple"])
-        {
-            validText.SetActive(true);
-        }
-        else
-        {
-            validText.SetActive(false);
-        }
 
         AddIngredients();
+        Comparison();
 
     }
 
@@ -61,6 +50,21 @@ public class Recipient : MonoBehaviour
         {
             recipe.apple = !recipe.apple;
             //Debug.Log("Apple : " + recipe.apple);
+        }
+    }
+
+    public void Comparison()
+    {
+        if (recipe.pastas == levelManager.recipeIngredients["Pastas"] &&
+            recipe.tomatoSauce == levelManager.recipeIngredients["Tomato Sauce"] &&
+            recipe.meat == levelManager.recipeIngredients["Meat"] &&
+            recipe.apple == levelManager.recipeIngredients["Apple"])
+        {
+            validText.SetActive(true);
+        }
+        else
+        {
+            validText.SetActive(false);
         }
     }
 
