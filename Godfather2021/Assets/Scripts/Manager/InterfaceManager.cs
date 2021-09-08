@@ -5,6 +5,7 @@ public class InterfaceManager : MonoBehaviour
 {
     public static InterfaceManager instance;
 
+    public Canvas canvas;
     [SerializeField] private Text chronoText;
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private GameObject gamePanel;
