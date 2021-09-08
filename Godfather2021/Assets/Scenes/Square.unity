@@ -1448,7 +1448,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6793269193818014242, guid: b4ccfb0427e2f4340be6699e8e486af5, type: 3}
       propertyPath: m_Name
-      value: Item
+      value: Ingredient
       objectReference: {fileID: 0}
     - target: {fileID: 6793269193818014242, guid: b4ccfb0427e2f4340be6699e8e486af5, type: 3}
       propertyPath: m_IsActive
@@ -2593,8 +2593,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 6793269193818014242, guid: b4ccfb0427e2f4340be6699e8e486af5, type: 3}
   knife: {fileID: 6502470369492224684, guid: 30e6f7db4a228ac40a8bb78923a1a19a, type: 3}
-  spawnIndex: {x: 0, y: 0}
   gridData: {fileID: 4900000, guid: 06ce7c934499fe8419ef47fcc10656b5, type: 3}
+  allIngredients:
+  - {fileID: 11400000, guid: 72a1f2d6bc5eb284bb37fd6444fc238b, type: 2}
+  - {fileID: 11400000, guid: 8d1c5f238b21d0f40bc3a0285346335f, type: 2}
 --- !u!1 &584502441
 GameObject:
   m_ObjectHideFlags: 0

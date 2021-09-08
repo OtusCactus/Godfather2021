@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class Ingredients : MonoBehaviour
+[CreateAssetMenu(fileName = "New Ingredient", menuName = "Game ScriptObj/Ingredient", order = 1)]
+public class Ingredients : ScriptableObject
 {
-    public bool pastas;
-    public bool tomatoSauce;
-    public bool meat;
-    public bool apple;
+    public string name = "";
+    public Sprite[] sprites;
+    public Color[] colors;
 }

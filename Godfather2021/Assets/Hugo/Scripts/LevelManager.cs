@@ -14,15 +14,15 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(recipes.Count != 0)
-        {
-            recipe = recipes[Random.Range(0, recipes.Count)];
-        }
+        //if(recipes.Count != 0)
+        //{
+        //    recipe = recipes[Random.Range(0, recipes.Count)];
+        //}
 
-        recipeIngredients.Add("Pastas", recipe.pastas);
-        recipeIngredients.Add("Tomato Sauce", recipe.tomatoSauce);
-        recipeIngredients.Add("Meat", recipe.meat);
-        recipeIngredients.Add("Apple", recipe.apple);
+        //recipeIngredients.Add("Pastas", recipe.pastas);
+        //recipeIngredients.Add("Tomato Sauce", recipe.tomatoSauce);
+        //recipeIngredients.Add("Meat", recipe.meat);
+        //recipeIngredients.Add("Apple", recipe.apple);
 
     }
 
