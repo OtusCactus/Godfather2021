@@ -20,7 +20,7 @@ public class ItemSlot2 : MonoBehaviour, IDropHandler
 
             cookingTimer.ingredientsInPan.Add(eventData.pointerDrag);
 
-            cookingTimer.timeStart = true;
+            //cookingTimer.timeStart = true;
             cookingTimer.actualTimer = cookingTimer.maxTimer;
         }
     }

@@ -16,6 +16,5 @@ MonoBehaviour:
   sprites: []
   colors:
   - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0.8679245, g: 0.37262115, b: 0, a: 1}
-  isCut: 0
-  isCooked: 0
+  - {r: 0.06343896, g: 0.31132078, b: 0.27558425, a: 1}
+  type: red

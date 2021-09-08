@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class InterfaceManager : MonoBehaviour
 {
@@ -8,7 +9,11 @@ public class InterfaceManager : MonoBehaviour
     public Canvas canvas;
     [SerializeField] private Text chronoText;
     [SerializeField] private GameObject menuPanel;
+    [SerializeField] private GameObject resultPanel;
     public GameObject gamePanel;
+
+    public Text scoreText;
+    public Image mealImage;
 
     private void Awake()
     {
@@ -28,16 +33,40 @@ public class InterfaceManager : MonoBehaviour
             {
                 if (this != null)
                 {
-                    if (GameManager.instance.state == GameState.MENU)
+                    switch (GameManager.instance.state)
                     {
-                        menuPanel.SetActive(true);
-                        gamePanel.SetActive(false);
+                        case GameState.MENU:
+                            {
+                                menuPanel.SetActive(true);
+                                gamePanel.SetActive(false);
+                                resultPanel.SetActive(false);
+                            }
+                            break;
+                        case GameState.INGAME:
+                            {
+                                menuPanel.SetActive(false);
+                                gamePanel.SetActive(true);
+                                resultPanel.SetActive(false);
+                            }
+                            break;
+                        case GameState.PAUSE:
+                            //
+                            break;
+                        case GameState.RESULT:
+                            {
+                                menuPanel.SetActive(false);
+                                gamePanel.SetActive(false);
+
+                                scoreText.text = "Score : " + LevelManager.instance.score.ToString() + "%";
+                                //todo image aspect
+                                //mealImage.color = LevelManager.instance.recipe.
+                                resultPanel.SetActive(true);
+                            }
+                            break;
+                        default:
+                            break;
                     }
-                    else if (GameManager.instance.state == GameState.INGAME)
-                    {
-                        menuPanel.SetActive(false);
-                        gamePanel.SetActive(true);
-                    }
+                   
                 }
             };
 
@@ -52,5 +81,10 @@ public class InterfaceManager : MonoBehaviour
     public void UpdateChronoText(string newText)
     {
         chronoText.text = newText;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

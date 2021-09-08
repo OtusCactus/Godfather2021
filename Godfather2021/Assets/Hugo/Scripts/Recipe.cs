@@ -51,8 +51,12 @@ public class IngredientState
 [CreateAssetMenu(fileName = "New Recipe", menuName = "Game ScriptObj/Recipe", order = 1)]
 public class Recipe : ScriptableObject
 {
+    public Sprite[] sprites;
+    public Color[] colors;
+
     public List<Ingredients> ingredientsList;
     public List<IngredientState> ingredientsStateList;
+
     //public bool pastas;
     //public bool tomatoSauce;
     //public bool meat;

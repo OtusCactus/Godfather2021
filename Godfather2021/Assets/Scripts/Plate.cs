@@ -13,11 +13,12 @@ public class Plate : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         //if an object has been droppped, put it in the right place
-        if (eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<IngredientManager>())
+        if (eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<CombinationResult>())
         {
             eventData.pointerDrag.gameObject.SetActive(false);
-            recipeIngredients.Add(eventData.pointerDrag.GetComponent<IngredientManager>().myIngredient);
-            recipeIngredientsState.Add(eventData.pointerDrag.GetComponent<IngredientManager>().state);
+            //recipeIngredients.Add(eventData.pointerDrag.GetComponent<IngredientManager>().myIngredient);
+            //recipeIngredientsState.Add(eventData.pointerDrag.GetComponent<IngredientManager>().state);
+            GameManager.instance.ChangeState(GameState.RESULT);
         }
     }
 }

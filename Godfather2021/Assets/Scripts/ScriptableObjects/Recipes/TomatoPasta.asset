@@ -12,13 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f122e42d57110b47bfa869aaff10f03, type: 3}
   m_Name: TomatoPasta
   m_EditorClassIdentifier: 
+  sprites: []
+  colors:
+  - {r: 0.812884, g: 1, b: 0.3169812, a: 1}
+  - {r: 0.36731932, g: 0.6320754, b: 0.59190035, a: 1}
+  - {r: 0.39933342, g: 0.30564258, b: 0.7264151, a: 1}
+  - {r: 0.78383034, g: 0.2415095, b: 1, a: 1}
   ingredientsList:
   - {fileID: 11400000, guid: 8d1c5f238b21d0f40bc3a0285346335f, type: 2}
   - {fileID: 11400000, guid: 72a1f2d6bc5eb284bb37fd6444fc238b, type: 2}
   ingredientsStateList:
   - isCut: 1
-    isCooked: 0
+    isCooked: 1
     isChecked: 0
   - isCut: 0
-    isCooked: 0
+    isCooked: 1
     isChecked: 0

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+
+    public static LevelManager instance;
+
     public List<Recipe> recipes = new List<Recipe>();
 
     public Recipient recipient;
@@ -12,9 +15,21 @@ public class LevelManager : MonoBehaviour
 
     public Dictionary<string, bool> recipeIngredients = new Dictionary<string, bool>();
 
-    [SerializeField] private Plate plate;
+    [HideInInspector] public CombinationResult plate;
     private List<Ingredients> ingredientsNeeded = new List<Ingredients>();
     private List<IngredientState> ingredientsStateNeeded = new List<IngredientState>();
+
+    public int score = 0;
+
+    private void Awake()
+    {
+        if(instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -52,9 +67,8 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void CompareRecipe()
+    public void CompareRecipe()
     {
-        int score = 0;
         int maxScore = ingredientsNeeded.Count * 100;
         string[] potentialIngrediens = new string[ingredientsNeeded.Count];
 
@@ -213,6 +227,8 @@ public class LevelManager : MonoBehaviour
 
         //TODO
         print("score : " + score + " / max score : " + maxScore);
+        score = (score * 100) / maxScore;
+        print("score : " + score + "%");
         //max score += ?? pour garder score max, à la fin, produit en croix (score * 100)/maxscore
         //plus tard, check grille si ingrédients coupé en trop
 

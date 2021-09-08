@@ -14,7 +14,11 @@ public class CookingTimer : MonoBehaviour
 
     public bool timeStart = false;
 
+    [SerializeField] private GameObject mealToSpawn;
+
     public List<GameObject> ingredientsInPan = new List<GameObject>();
+
+    private CombinationResult mealServed;
 
     // Start is called before the first frame update
     void Start()
@@ -44,16 +48,37 @@ public class CookingTimer : MonoBehaviour
             timerImage.fillAmount = actualTimer / maxTimer;
             if(actualTimer <= 0)
             {
-                for(int i = 0; i < ingredientsInPan.Count; i++)
-                {
-                    ingredientsInPan[i].GetComponent<IngredientManager>().state.isCooked = true;
-                }
+                //for(int i = 0; i < ingredientsInPan.Count; i++)
+                //{
+                //    ingredientsInPan[i].GetComponent<IngredientManager>().state.isCooked = true;
+                //}
 
                 timeStart = false;
                 actualTimer = 0;
                 StartCoroutine("TimerBack");
+
+                mealServed.ChangeAspect(LevelManager.instance.score);
+                mealServed.gameObject.SetActive(true);
             }
         }
+    }
+
+    public void StartTimer()
+    {
+        for (int i = 0; i < ingredientsInPan.Count; i++)
+        {
+            ingredientsInPan[i].GetComponent<IngredientManager>().state.isCooked = true;
+            ingredientsInPan[i].SetActive(false);
+        }
+        timeStart = true;
+
+        GameObject go = Instantiate(mealToSpawn, GetComponent<RectTransform>().position, Quaternion.identity);
+        go.transform.SetParent(InterfaceManager.instance.gamePanel.transform, true);
+        mealServed = go.GetComponent<CombinationResult>();
+        go.SetActive(false);
+
+        mealServed.Initialize(ingredientsInPan);
+
     }
 
     IEnumerator TimerBack()

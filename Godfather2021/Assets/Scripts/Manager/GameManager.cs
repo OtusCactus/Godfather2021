@@ -5,7 +5,8 @@ public enum GameState
 {
     MENU,
     INGAME,
-    PAUSE
+    PAUSE,
+    RESULT
 }
 
 public class GameManager : MonoBehaviour
@@ -72,6 +73,11 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case GameState.PAUSE:
+                {
+                    canPlay = false;
+                }
+                break;
+            case GameState.RESULT:
                 {
                     canPlay = false;
                 }
