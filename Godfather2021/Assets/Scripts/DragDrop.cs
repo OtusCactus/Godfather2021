@@ -5,21 +5,23 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 {
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    public bool miaou = true;
 
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        miaou = true;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = false;
+        canvasGroup.alpha = .75f;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        canvasGroup.alpha = 0.75f;
         //get object to follow mouse (eventData.delta is mouse mouvement)
         //divide by canvas scale factor so that regardless of the screen size, the object will always correctly follow the mouse
         rectTransform.anchoredPosition += eventData.delta / InterfaceManager.instance.canvas.scaleFactor;

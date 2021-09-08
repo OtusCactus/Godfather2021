@@ -8,7 +8,7 @@ public class InterfaceManager : MonoBehaviour
     public Canvas canvas;
     [SerializeField] private Text chronoText;
     [SerializeField] private GameObject menuPanel;
-    [SerializeField] private GameObject gamePanel;
+    public GameObject gamePanel;
 
     private void Awake()
     {
