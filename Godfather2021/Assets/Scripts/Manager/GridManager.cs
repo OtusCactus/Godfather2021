@@ -99,6 +99,7 @@ public class GridManager : MonoBehaviour
             if (name == "knife")
             {
                 go = Instantiate(knife, correctPos, Quaternion.identity);
+                grid.transform.GetChild(childIndex).GetComponent<ItemSlot>().isKnife = true;
             }
             else
             {
@@ -114,6 +115,8 @@ public class GridManager : MonoBehaviour
                 }
             }
             go.transform.SetParent(InterfaceManager.instance.gamePanel.transform, true);
+            go.GetComponent<DragDrop>().currentSlot = grid.transform.GetChild(childIndex).GetComponent<ItemSlot>();
+            grid.transform.GetChild(childIndex).GetComponent<ItemSlot>().isOccupied = true;
         }
     }
 

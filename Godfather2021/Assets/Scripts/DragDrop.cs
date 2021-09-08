@@ -7,6 +7,11 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private CanvasGroup canvasGroup;
     [HideInInspector] public Vector2 previousPos;
     [HideInInspector] public bool droppedOnSlot = false;
+    [HideInInspector] public ItemSlot currentSlot;
+    [HideInInspector] public ItemSlot previousSlot;
+
+    public System.Action onDraggingEnd;
+    public System.Action onDraggingBegin;
 
     private void Start()
     {
@@ -20,6 +25,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = .75f;
         droppedOnSlot = false;
+        previousSlot = currentSlot; 
+        currentSlot.isOccupied = false;
+        currentSlot = null;
+        if (onDraggingBegin != null) onDraggingBegin.Invoke();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -36,7 +45,11 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         if (droppedOnSlot == false)
         {
             rectTransform.position = previousPos;
+            currentSlot = previousSlot;
+            currentSlot.isOccupied = true;
         }
+
+        if (onDraggingEnd != null) onDraggingEnd.Invoke();
     }
 
     public void OnPointerDown(PointerEventData eventData)
