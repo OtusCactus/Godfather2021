@@ -38,7 +38,7 @@ public class InterfaceManager : MonoBehaviour
                         case GameState.MENU:
                             {
                                 menuPanel.SetActive(true);
-                                gamePanel.SetActive(false);
+                                //gamePanel.SetActive(false);
                                 resultPanel.SetActive(false);
                             }
                             break;

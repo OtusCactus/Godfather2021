@@ -20,20 +20,29 @@ public class GridManager : MonoBehaviour
     void Start()
     {
         grid = GetComponent<GridLayoutGroup>();
+
+        GameManager.instance.onStateChange += () =>
+        {
+            if(GameManager.instance.state == GameState.INGAME)
+            {
+                GetColumnAndRow(grid, out column, out row);
+                ReadGrid();
+            }
+        };
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!rowCounted && grid != null)
-        {
-            rowCounted = true;
-            GetColumnAndRow(grid, out column, out row);
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ReadGrid();
-        }
+        //if (!rowCounted && grid != null)
+        //{
+        //    rowCounted = true;
+        //    GetColumnAndRow(grid, out column, out row);
+        //}
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    ReadGrid();
+        //}
     }
 
     void ReadGrid()
