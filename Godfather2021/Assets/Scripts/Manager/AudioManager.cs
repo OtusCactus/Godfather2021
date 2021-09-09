@@ -65,7 +65,7 @@ public class AudioManager : MonoBehaviour
     {
         foreach (SoundEffect fx in soundEffects)
         {
-            if(fx.source.name != "Music")
+            if(fx.clipName != "Music")
             {
                 fx.source.volume = volume;
             }
@@ -76,7 +76,7 @@ public class AudioManager : MonoBehaviour
     {
         foreach (SoundEffect fx in soundEffects)
         {
-            if (fx.source.name == "Music")
+            if (fx.clipName == "Music")
             {
                 fx.source.volume = volume;
             }
