@@ -123,3 +123,4 @@ MonoBehaviour:
     isCut: 0
     isCooked: 0
     isChecked: 0
+  knife: {fileID: 6502470369492224684, guid: 30e6f7db4a228ac40a8bb78923a1a19a, type: 3}

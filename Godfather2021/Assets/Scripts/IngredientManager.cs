@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 
 public class IngredientManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class IngredientManager : MonoBehaviour
     private Image image;
     public IngredientState state = new IngredientState();
 
+    public GameObject knife;
 
 
     // Start is called before the first frame update
@@ -29,6 +31,7 @@ public class IngredientManager : MonoBehaviour
     {
         if (!state.isCut)
         {
+            StartCoroutine("CutAnimation");
             if(myIngredient.type == IngredientType.MEAT)
             {
                 AudioManager.instance.Play("CutMeat");
@@ -44,6 +47,14 @@ public class IngredientManager : MonoBehaviour
         {
             print("déjà coupé");
         }
+    }
+
+    private IEnumerator CutAnimation()
+    {
+        Debug.Log("patate");
+        knife.GetComponent<Animator>().SetBool("isCut", true);
+        yield return new WaitForSeconds(0.3f);
+        knife.GetComponent<Animator>().SetBool("isCut", false);
     }
 
 }
