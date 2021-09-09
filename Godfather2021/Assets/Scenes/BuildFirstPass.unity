@@ -4752,7 +4752,7 @@ MonoBehaviour:
   soundEffects:
   - clipName: CutMeat
     clip:
-    - {fileID: 8300000, guid: 4b2f988aa2c82f74d9856c6eb4bfbb67, type: 3}
+    - {fileID: 8300000, guid: a3be8208de50f5844a211436ee6f7e1d, type: 3}
     volume: 1
     priority: 150
     loop: 0
