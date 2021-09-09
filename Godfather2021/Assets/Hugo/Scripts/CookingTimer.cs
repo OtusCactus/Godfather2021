@@ -76,6 +76,7 @@ public class CookingTimer : MonoBehaviour
         GameObject go = Instantiate(mealToSpawn, GetComponent<RectTransform>().position, Quaternion.identity);
         go.transform.SetParent(InterfaceManager.instance.gamePanel.transform, true);
         mealServed = go.GetComponent<CombinationResult>();
+        go.GetComponent<RectTransform>().localScale = Vector3.one;
         mealServed.cookingTimer = this;
         mealServed.isOnPan = true;
         go.SetActive(false);
