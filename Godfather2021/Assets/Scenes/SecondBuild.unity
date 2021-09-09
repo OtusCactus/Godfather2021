@@ -1412,6 +1412,7 @@ MonoBehaviour:
   resultPanel: {fileID: 1116138614697174462}
   tutoPanel: {fileID: 1852758284}
   gamePanel: {fileID: 1877805542}
+  grid: {fileID: 568841615}
   settingsWindow: {fileID: 670446184021923588}
   scoreText: {fileID: 1116138614928767708}
   mealImage: {fileID: 1116138614770216554}
@@ -2291,7 +2292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 640, y: 0}
+  m_AnchoredPosition: {x: 862, y: 0}
   m_SizeDelta: {x: 1280, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &568841617
@@ -2340,6 +2341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 6793269193818014242, guid: b4ccfb0427e2f4340be6699e8e486af5, type: 3}
   knife: {fileID: 6502470369492224684, guid: 30e6f7db4a228ac40a8bb78923a1a19a, type: 3}
+  pan: {fileID: 3417830267096962722, guid: 16ee07477bddbb34ca35f210d0845276, type: 3}
   gridData: {fileID: 4900000, guid: 3d73e3b2b0eb347479603fe967496578, type: 3}
   allIngredients:
   - {fileID: 11400000, guid: 8836be89d354fe44c868f5e5ea594c3b, type: 2}
@@ -6381,8 +6383,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -296.5, y: 144}
-  m_SizeDelta: {x: 425, y: 425}
+  m_AnchoredPosition: {x: -208.5, y: 165.5}
+  m_SizeDelta: {x: 302.5471, y: 302.5471}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1420147651
 MonoBehaviour:
@@ -8513,11 +8515,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3417830267096962723, guid: 16ee07477bddbb34ca35f210d0845276, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 305.8134
+      value: 145
       objectReference: {fileID: 0}
     - target: {fileID: 3417830267096962723, guid: 16ee07477bddbb34ca35f210d0845276, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 305.8134
+      value: 145
       objectReference: {fileID: 0}
     - target: {fileID: 3417830267096962723, guid: 16ee07477bddbb34ca35f210d0845276, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8808,8 +8810,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 634.7117, y: -76}
-  m_SizeDelta: {x: 482.5767, y: 100}
+  m_AnchoredPosition: {x: 750.50006, y: 30.5}
+  m_SizeDelta: {x: 319.88, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2140762864
 MonoBehaviour:
@@ -10432,7 +10434,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 670446184918111603}
+  m_TargetGraphic: {fileID: 670446185605183480}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
