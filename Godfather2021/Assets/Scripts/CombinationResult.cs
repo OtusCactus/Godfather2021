@@ -37,8 +37,11 @@ public class CombinationResult : MonoBehaviour
             if (dragAndDrop.droppedOnSlot)
             {
                 cookingTimer.TimerBack();
+                if (isOnPan)
+                {
+                    cookingTimer.ResetPosition();
+                }
                 isOnPan = false;
-                cookingTimer.ResetPosition();
             }
             else
             {
