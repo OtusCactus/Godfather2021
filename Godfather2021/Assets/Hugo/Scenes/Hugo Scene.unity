@@ -1400,8 +1400,9 @@ MonoBehaviour:
   actualTimer: 0
   maxTimer: 10
   timerImage: {fileID: 1536627309}
-  mixer: 0
-  pan: 1
+  timeStart: 0
+  mealToSpawn: {fileID: 0}
+  ingredientsInPan: []
 --- !u!1 &528389237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,8 +2545,9 @@ MonoBehaviour:
   actualTimer: 0
   maxTimer: 10
   timerImage: {fileID: 1267094348}
-  mixer: 1
-  pan: 0
+  timeStart: 0
+  mealToSpawn: {fileID: 0}
+  ingredientsInPan: []
 --- !u!1 &1205070089
 GameObject:
   m_ObjectHideFlags: 0
@@ -4341,8 +4343,10 @@ MonoBehaviour:
   recipes:
   - {fileID: 11400000, guid: cc6fae78e313a894ca25c003a140735a, type: 2}
   - {fileID: 11400000, guid: d80bba8ce54fe2e43b8261ac26fdb510, type: 2}
-  recipe: {fileID: 0}
   recipient: {fileID: 101054602}
+  recipe: {fileID: 0}
+  plate: {fileID: 0}
+  score: 0
 --- !u!114 &2118685951
 MonoBehaviour:
   m_ObjectHideFlags: 0
