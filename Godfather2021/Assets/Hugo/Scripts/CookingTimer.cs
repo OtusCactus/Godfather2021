@@ -45,6 +45,8 @@ public class CookingTimer : MonoBehaviour
         {
             actualTimer -= Time.deltaTime;
             timerImage.fillAmount = actualTimer / maxTimer;
+            gameObject.GetComponent<Animator>().SetBool("isCooking", true);
+
             if(actualTimer <= 0)
             {
 
@@ -115,5 +117,10 @@ public class CookingTimer : MonoBehaviour
         actualTimerBurn = maxTimerBurn;
         timeStart2 = false;
         attention.gameObject.SetActive(false);
+
+        gameObject.GetComponent<Animator>().SetBool("isCooking", false);
     }
+
+
+    
 }
