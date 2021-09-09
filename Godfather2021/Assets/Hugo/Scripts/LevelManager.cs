@@ -220,6 +220,7 @@ public class LevelManager : MonoBehaviour
 
         print("score : " + score + " / max score : " + maxScore);
         score = Mathf.Clamp((score * 100) / maxScore, 0, 100);
+        score = Mathf.Ceil(score);
         print("score : " + score + "%");
         return score;
         //TODO
