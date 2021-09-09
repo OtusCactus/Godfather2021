@@ -13,6 +13,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public System.Action onDraggingEnd;
     public System.Action onDraggingBegin;
 
+    public bool canDrop = true;
+
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -51,10 +53,14 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         AudioManager.instance.Play("Drop");
 
         canvasGroup.alpha = 1;
-        canvasGroup.blocksRaycasts = true; 
+        canvasGroup.blocksRaycasts = true;
+
         if (droppedOnSlot == false)
         {
-            rectTransform.position = previousPos;
+            if (canDrop)
+            {
+                rectTransform.position = previousPos;
+            }
             if (previousSlot != null)
             {
                 currentSlot = previousSlot;
@@ -76,9 +82,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     {
         if(eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<Knife>())
         {
-            if (GetComponent<IngredientManager>())
+            if (GetComponent<IngredientManager>() && !GetComponent<IngredientManager>().state.isCut)
             {
-                GetComponent<IngredientManager>().Cut();
+                eventData.pointerDrag.GetComponent<Knife>().OnCut(true);
+                GetComponent<IngredientManager>().Cut(false);
             }
         }
     }
