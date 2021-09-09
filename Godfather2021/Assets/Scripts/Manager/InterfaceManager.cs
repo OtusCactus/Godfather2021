@@ -64,7 +64,7 @@ public class InterfaceManager : MonoBehaviour
                                 menuPanel.SetActive(false);
                                 gamePanel.SetActive(false);
 
-                                scoreText.text = "Score : " + LevelManager.instance.score.ToString() + "%";
+                                scoreText.text = "Score : " + LevelManager.instance.finalScore.ToString() + "%";
                                 //todo image aspect
                                 //mealImage.color = LevelManager.instance.recipe.
                                 resultPanel.SetActive(true);

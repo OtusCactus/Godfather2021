@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
     private List<Ingredients> ingredientsNeeded = new List<Ingredients>();
     private List<IngredientState> ingredientsStateNeeded = new List<IngredientState>();
 
-    public int score = 0;
+    public float finalScore = 0;
 
     private void Awake()
     {
@@ -59,17 +59,10 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    void Update()
+    public float CompareRecipe()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            CompareRecipe();
-        }
-    }
-
-    public void CompareRecipe()
-    {
-        int maxScore = ingredientsNeeded.Count * 100;
+        float score = 0;
+        float maxScore = ingredientsNeeded.Count * 100;
         string[] potentialIngrediens = new string[ingredientsNeeded.Count];
 
         //compare each ingredient
@@ -225,11 +218,11 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        //TODO
         print("score : " + score + " / max score : " + maxScore);
         score = Mathf.Clamp((score * 100) / maxScore, 0, 100);
         print("score : " + score + "%");
-        //max score += ?? pour garder score max, à la fin, produit en croix (score * 100)/maxscore
+        return score;
+        //TODO
         //plus tard, check grille si ingrédients coupé en trop
 
     }

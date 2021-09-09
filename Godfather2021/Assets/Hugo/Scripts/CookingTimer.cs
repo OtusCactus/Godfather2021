@@ -57,7 +57,7 @@ public class CookingTimer : MonoBehaviour
                 actualTimer = 0;
                 StartCoroutine("TimerBack");
 
-                mealServed.ChangeAspect(LevelManager.instance.score);
+                mealServed.ChangeAspect();
                 mealServed.gameObject.SetActive(true);
             }
         }

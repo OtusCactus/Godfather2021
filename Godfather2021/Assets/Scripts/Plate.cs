@@ -15,6 +15,7 @@ public class Plate : MonoBehaviour, IDropHandler
         //if an object has been droppped, put it in the right place
         if (eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<CombinationResult>())
         {
+            LevelManager.instance.finalScore = eventData.pointerDrag.GetComponent<CombinationResult>().mealScore;
             eventData.pointerDrag.gameObject.SetActive(false);
             //recipeIngredients.Add(eventData.pointerDrag.GetComponent<IngredientManager>().myIngredient);
             //recipeIngredientsState.Add(eventData.pointerDrag.GetComponent<IngredientManager>().state);

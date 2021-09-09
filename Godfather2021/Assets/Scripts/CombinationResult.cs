@@ -11,6 +11,8 @@ public class CombinationResult : MonoBehaviour
 
     private Image image;
 
+    public float mealScore = 0;
+
 
     public void Initialize(List<GameObject> allIngredients)
     {
@@ -22,20 +24,20 @@ public class CombinationResult : MonoBehaviour
             recipeIngredientsState.Add(ingrMan.GetComponent<IngredientManager>().state);
         }
         LevelManager.instance.plate = this;
-        LevelManager.instance.CompareRecipe();
+        mealScore = LevelManager.instance.CompareRecipe();
     }
 
-    public void ChangeAspect(float ratio)
+    public void ChangeAspect()
     {
-        if(ratio > 75)
+        if(mealScore > 75)
         {
             image.color = LevelManager.instance.recipe.colors[0];
         }
-        else if(ratio > 50)
+        else if(mealScore > 50)
         {
             image.color = LevelManager.instance.recipe.colors[1];
         }
-        else if (ratio > 25)
+        else if (mealScore > 25)
         {
             image.color = LevelManager.instance.recipe.colors[2];
         }
