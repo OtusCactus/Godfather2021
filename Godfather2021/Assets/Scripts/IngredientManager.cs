@@ -29,6 +29,14 @@ public class IngredientManager : MonoBehaviour
     {
         if (!state.isCut)
         {
+            if(myIngredient.type == IngredientType.MEAT)
+            {
+                AudioManager.instance.Play("CutMeat");
+            }
+            else
+            {
+                AudioManager.instance.Play("CutVege");
+            }
             state.isCut = true;
             image.color = myIngredient.colors[1];
             image.sprite = myIngredient.sprites[1];
