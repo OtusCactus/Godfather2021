@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
@@ -57,5 +57,16 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public void OnPointerDown(PointerEventData eventData)
     {
         print("mouse clicked on object");
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        if(eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<Knife>())
+        {
+            if (GetComponent<IngredientManager>())
+            {
+                GetComponent<IngredientManager>().Cut();
+            }
+        }
     }
 }
