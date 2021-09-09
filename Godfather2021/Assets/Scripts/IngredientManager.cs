@@ -12,7 +12,6 @@ public class IngredientManager : MonoBehaviour
     private Image image;
     public IngredientState state = new IngredientState();
 
-    public GameObject knife;
     public bool isCutting = false;
 
 
@@ -33,7 +32,6 @@ public class IngredientManager : MonoBehaviour
     {
         if (!state.isCut)
         {
-            StartCoroutine("CutAnimation");
             GetComponent<DragDrop>().canDrop = false;
             isCutting = true;
             if (myIngredient.type == IngredientType.MEAT)
@@ -52,14 +50,6 @@ public class IngredientManager : MonoBehaviour
         {
             print("déjà coupé");
         }
-    }
-
-    private IEnumerator CutAnimation()
-    {
-        Debug.Log("patate");
-        knife.GetComponent<Animator>().SetBool("isCut", true);
-        yield return new WaitForSeconds(0.3f);
-        knife.GetComponent<Animator>().SetBool("isCut", false);
     }
 
     private IEnumerator WaitAndStopCut(bool goBack)

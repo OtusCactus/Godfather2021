@@ -1,17 +1,22 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Knife : MonoBehaviour, IDropHandler
 {
     private DragDrop dragAndDrop;
-    private bool isCutting = false;
-    private RectTransform rect;
+
+    [SerializeField] private Sprite[] animSprites;
+
+    private Image image;
+    private Animation anim;
 
     private void Start()
     {
         dragAndDrop = GetComponent<DragDrop>();
-        rect = GetComponent<RectTransform>();
+        image = GetComponent<Image>();
+        anim = GetComponent<Animation>();
 
         dragAndDrop.onDraggingBegin += () =>
         {
@@ -26,16 +31,16 @@ public class Knife : MonoBehaviour, IDropHandler
     public void OnCut(bool needToGoBack)
     {
         GetComponent<DragDrop>().canDrop = false;
-        isCutting = true;
         //shake rectTransform
+        anim.Play("A_KnifeCut");
         StartCoroutine(WaitAndStopCut(needToGoBack));
     }
 
     private IEnumerator WaitAndStopCut(bool goBack)
     {
         yield return new WaitForSeconds(0.85f);
-        isCutting = false;
         dragAndDrop.canDrop = true;
+        anim.Play("A_KnifeIdle");
         if (goBack)
         {
             GetComponent<RectTransform>().position = dragAndDrop.previousPos;
@@ -53,5 +58,10 @@ public class Knife : MonoBehaviour, IDropHandler
                 print("couper");
             }
         }
+    }
+
+    public void ChangeSprite(int id)
+    {
+        image.sprite = animSprites[id];
     }
 }
