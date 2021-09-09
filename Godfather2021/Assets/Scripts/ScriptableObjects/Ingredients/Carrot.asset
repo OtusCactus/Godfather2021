@@ -19,4 +19,4 @@ MonoBehaviour:
   colors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.2264151, g: 0.2234247, b: 0.2234247, a: 1}
-  type: orange
+  type: 1

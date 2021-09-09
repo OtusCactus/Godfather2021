@@ -83,6 +83,7 @@ public class InterfaceManager : MonoBehaviour
     public void Play()
     {
         GameManager.instance.ChangeState(GameState.TUTO);
+        AudioManager.instance.Play("Music");
     }
 
     public void UpdateChronoText(string newText)

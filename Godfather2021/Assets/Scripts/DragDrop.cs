@@ -43,6 +43,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        AudioManager.instance.Play("Drop");
+
         canvasGroup.alpha = 1;
         canvasGroup.blocksRaycasts = true; 
         if (droppedOnSlot == false)
@@ -58,6 +60,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        AudioManager.instance.Play("Grab");
         print("mouse clicked on object");
     }
 

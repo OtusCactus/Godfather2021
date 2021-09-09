@@ -19,4 +19,4 @@ MonoBehaviour:
   colors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
-  type: green
+  type: 3

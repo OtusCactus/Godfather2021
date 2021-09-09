@@ -19,4 +19,4 @@ MonoBehaviour:
   colors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
-  type: white
+  type: 4
