@@ -29,6 +29,8 @@ public class CookingTimer : MonoBehaviour, IDropHandler
     [SerializeField] private Text nbIngredientsText;
     [SerializeField] private int nbIngredients = 0;
 
+    public GameObject timers;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,8 @@ public class CookingTimer : MonoBehaviour, IDropHandler
         actualTimerBurn = maxTimerBurn;
 
         attention.SetActive(false);
+        timers.SetActive(false);
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
     }
 
     // Update is called once per frame
@@ -73,6 +77,10 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
     public void ResetPosition()
     {
+        timers.SetActive(false);
+
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
+
         if (!GetComponent<DragDrop>().previousSlot.isOccupied)
         {
             GetComponent<RectTransform>().position = GetComponent<DragDrop>().previousPos;
@@ -97,6 +105,10 @@ public class CookingTimer : MonoBehaviour, IDropHandler
     {
         if(ingredientsInPan.Count != 0)
         {
+            timers.SetActive(true);
+
+            gameObject.transform.localScale = new Vector3(2, 2, 2);
+
             for (int i = 0; i < ingredientsInPan.Count; i++)
             {
                 ingredientsInPan[i].GetComponent<IngredientManager>().state.isCooked = true;
