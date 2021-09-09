@@ -18,8 +18,6 @@ public class Plate : MonoBehaviour, IDropHandler
         {
             LevelManager.instance.finalScore = eventData.pointerDrag.GetComponent<CombinationResult>().mealScore;
             eventData.pointerDrag.gameObject.SetActive(false);
-            //recipeIngredients.Add(eventData.pointerDrag.GetComponent<IngredientManager>().myIngredient);
-            //recipeIngredientsState.Add(eventData.pointerDrag.GetComponent<IngredientManager>().state);
             InterfaceManager.instance.mealImage.sprite = eventData.pointerDrag.GetComponent<Image>().sprite;
             InterfaceManager.instance.mealImage.color = eventData.pointerDrag.GetComponent<Image>().color;
             GameManager.instance.ChangeState(GameState.RESULT);

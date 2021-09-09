@@ -1340,6 +1340,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187713566}
   m_CullTransparentMesh: 1
+--- !u!114 &190311380 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3417830267096962750, guid: 16ee07477bddbb34ca35f210d0845276, type: 3}
+  m_PrefabInstance: {fileID: 2073653461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e76b3888d225a049a3c4a78fc15f53b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &249952679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2776,7 +2787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bfb98a3c1324f248bf45bcb5e43117f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookingTimer: {fileID: 1484690258}
+  cookingTimer: {fileID: 190311380}
 --- !u!114 &576407482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6966,7 +6977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -296.5, y: 144}
+  m_AnchoredPosition: {x: -339, y: 144}
   m_SizeDelta: {x: 425, y: 425}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1420147651
@@ -7797,7 +7808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bfb98a3c1324f248bf45bcb5e43117f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookingTimer: {fileID: 1484690258}
+  cookingTimer: {fileID: 190311380}
 --- !u!1 &1523499912
 GameObject:
   m_ObjectHideFlags: 0
@@ -8593,7 +8604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bfb98a3c1324f248bf45bcb5e43117f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookingTimer: {fileID: 1484690258}
+  cookingTimer: {fileID: 190311380}
 --- !u!114 &1882512807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9224,7 +9235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3417830266481430696, guid: 16ee07477bddbb34ca35f210d0845276, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 52.676758
+      value: 134
       objectReference: {fileID: 0}
     - target: {fileID: 3417830267096962722, guid: 16ee07477bddbb34ca35f210d0845276, type: 3}
       propertyPath: m_Name

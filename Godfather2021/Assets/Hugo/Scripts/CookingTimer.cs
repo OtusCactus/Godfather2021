@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CookingTimer : MonoBehaviour
+public class CookingTimer : MonoBehaviour, IDropHandler
 {
     public float actualTimer;
     public float maxTimer;
@@ -24,6 +25,9 @@ public class CookingTimer : MonoBehaviour
     [SerializeField] private float actualTimerBurn;
     [SerializeField] private float maxTimerBurn;
     [SerializeField] private GameObject attention;
+
+    [SerializeField] private Text nbIngredientsText;
+    [SerializeField] private int nbIngredients = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +58,7 @@ public class CookingTimer : MonoBehaviour
 
                 mealServed.ChangeAspect();
                 mealServed.gameObject.SetActive(true);
+                nbIngredientsText.gameObject.SetActive(false);
 
                 timeStart2 = true;
             }
@@ -63,6 +68,11 @@ public class CookingTimer : MonoBehaviour
         {
             BurnTheMeal();
         }
+    }
+
+    public void ResetPosition()
+    {
+        GetComponent<RectTransform>().position = GetComponent<DragDrop>().previousPos;
     }
 
     public void StartTimer()
@@ -131,6 +141,25 @@ public class CookingTimer : MonoBehaviour
         gameObject.GetComponent<Animator>().SetBool("isCooking", false);
     }
 
+    public void OnDrop(PointerEventData eventData)
+    {
+        //if an object has been droppped, put it in the right place
+        if (eventData.pointerDrag != null && !eventData.pointerDrag.GetComponent<Knife>() && !eventData.pointerDrag.GetComponent<CombinationResult>())
+        {
+            eventData.pointerDrag.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position;
+            eventData.pointerDrag.GetComponent<DragDrop>().previousPos = GetComponent<RectTransform>().position;
+            eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
 
-    
+            eventData.pointerDrag.gameObject.SetActive(false);
+
+            ingredientsInPan.Add(eventData.pointerDrag);
+            nbIngredients++;
+            nbIngredientsText.text = "x" + nbIngredients;
+            nbIngredientsText.gameObject.SetActive(true);
+
+            //cookingTimer.timeStart = true;
+            actualTimer = maxTimer;
+        }
+    }
+
 }

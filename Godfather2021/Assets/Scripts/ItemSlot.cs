@@ -11,7 +11,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         //if an object has been droppped, put it in the right place
-        if (eventData.pointerDrag != null)
+        if (eventData.pointerDrag != null && !eventData.pointerDrag.GetComponent<CookingTimer>())
         {
             if (isOccupied)
             {
