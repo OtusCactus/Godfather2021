@@ -2827,16 +2827,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620120112}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1451182551}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.71283, y: 125.832886}
+  m_AnchoredPosition: {x: 0, y: -124}
   m_SizeDelta: {x: 81.7543, y: 81.7543}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &620120114
@@ -2852,7 +2852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.58431375, b: 0.58431375, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2912,7 +2912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -887.1218, y: 158.27417}
+  m_AnchoredPosition: {x: -1001.7455, y: 232.91943}
   m_SizeDelta: {x: 605.32837, y: 112.45947}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &624261434
@@ -2928,7 +2928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.58431375, b: 0.58431375, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3732,7 +3732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -221.25618, y: -92.27745}
+  m_AnchoredPosition: {x: 0, y: -92.27745}
   m_SizeDelta: {x: 81.7543, y: 81.7543}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &804527698
@@ -4212,7 +4212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.58431375, b: 0.58431375, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4348,16 +4348,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967711783}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1706865222}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 403.7138, y: 0}
+  m_AnchoredPosition: {x: 152.49994, y: 118}
   m_SizeDelta: {x: 81.7543, y: 81.7543}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &967711785
@@ -6450,7 +6450,7 @@ GameObject:
   - component: {fileID: 1451182553}
   - component: {fileID: 1451182552}
   m_Layer: 5
-  m_Name: Knife (1)
+  m_Name: Pan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6473,7 +6473,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1588.4619, y: -715.1502}
+  m_AnchoredPosition: {x: 1368.2455, y: -439.41943}
   m_SizeDelta: {x: 605.3283, y: 112.4595}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1451182552
@@ -6489,7 +6489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.58113205, b: 0.58113205, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6509,7 +6509,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2 - Placez vos aliments dans ces cases
+  m_Text: 2 - Placez vos aliments dans la casserole
 --- !u!222 &1451182553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7252,7 +7252,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 520.10925, y: -69.20807}
+  m_AnchoredPosition: {x: 666.7455, y: -144.4195}
   m_SizeDelta: {x: 884.6143, y: 56.0652}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1523499914
@@ -7480,7 +7480,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1086.3572, y: -291.51282}
+  m_AnchoredPosition: {x: 1725.2455, y: -815.41943}
   m_SizeDelta: {x: 605.3283, y: 112.4595}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1706865223
@@ -7516,7 +7516,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3 - Appuyez sur le bouton vert pour les combiner
+  m_Text: 3 - Placez l'asiette sur le feu
 --- !u!222 &1706865224
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7735,7 +7735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1852758285
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7754,10 +7754,10 @@ RectTransform:
   m_Father: {fileID: 1174695112}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 2209.491, y: 1242.8389}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1852758286
 MonoBehaviour:
