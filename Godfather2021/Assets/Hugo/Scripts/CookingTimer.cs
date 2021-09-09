@@ -77,6 +77,7 @@ public class CookingTimer : MonoBehaviour
         go.transform.SetParent(InterfaceManager.instance.gamePanel.transform, true);
         mealServed = go.GetComponent<CombinationResult>();
         mealServed.cookingTimer = this;
+        mealServed.isOnPan = true;
         go.SetActive(false);
 
         mealServed.Initialize(ingredientsInPan);
