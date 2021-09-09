@@ -8,10 +8,13 @@ public class InterfaceManager : MonoBehaviour
 
     public Canvas canvas;
     [SerializeField] private Text chronoText;
+    [Header("Panels")]
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private GameObject resultPanel;
     [SerializeField] private GameObject tutoPanel;
     public GameObject gamePanel;
+
+    [Space()]
 
     public Text scoreText;
     public Image mealImage;
