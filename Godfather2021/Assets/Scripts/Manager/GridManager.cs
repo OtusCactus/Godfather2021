@@ -13,6 +13,7 @@ public class GridManager : MonoBehaviour
     private bool rowCounted = false;
     [SerializeField] private GameObject item;
     [SerializeField] private GameObject knife;
+    [SerializeField] private GameObject pan;
     [SerializeField] private TextAsset gridData;
     [SerializeField] private List<Ingredients> allIngredients = new List<Ingredients>();
 
@@ -100,6 +101,10 @@ public class GridManager : MonoBehaviour
             {
                 go = Instantiate(knife, correctPos, Quaternion.identity);
                 grid.transform.GetChild(childIndex).GetComponent<ItemSlot>().isKnife = true;
+            }
+            else if (name == "pan")
+            {
+                go = Instantiate(pan, correctPos, Quaternion.identity);
             }
             else
             {

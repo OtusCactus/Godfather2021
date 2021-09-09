@@ -73,7 +73,24 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
     public void ResetPosition()
     {
-        GetComponent<RectTransform>().position = GetComponent<DragDrop>().previousPos;
+        if (!GetComponent<DragDrop>().previousSlot.isOccupied)
+        {
+            GetComponent<RectTransform>().position = GetComponent<DragDrop>().previousPos;
+        }
+        else
+        {
+            for (int i = 0; i < InterfaceManager.instance.grid.transform.childCount; ++i)
+            {
+                if (!InterfaceManager.instance.grid.transform.GetChild(i).GetComponent<ItemSlot>().isOccupied)
+                {
+                    Vector2 correctPos = InterfaceManager.instance.grid.transform.GetChild(i).GetComponent<RectTransform>().position;
+                    GetComponent<RectTransform>().position = correctPos;
+
+                    InterfaceManager.instance.grid.transform.GetChild(i).GetComponent<ItemSlot>().isOccupied = true;
+                    InterfaceManager.instance.grid.transform.GetChild(i).GetComponent<ItemSlot>().myItem = this.gameObject;
+                }
+            }
+        }
     }
 
     public void StartTimer()
@@ -153,14 +170,20 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
             eventData.pointerDrag.gameObject.SetActive(false);
 
-            ingredientsInPan.Add(eventData.pointerDrag);
-            nbIngredients++;
-            nbIngredientsText.text = "x" + nbIngredients;
-            nbIngredientsText.gameObject.SetActive(true);
+            AddIngredient(eventData.pointerDrag.gameObject);
 
-            //cookingTimer.timeStart = true;
-            actualTimer = maxTimer;
         }
+    }
+
+    public void AddIngredient(GameObject objectToAdd)
+    {
+        ingredientsInPan.Add(objectToAdd);
+        nbIngredients++;
+        nbIngredientsText.text = "x" + nbIngredients;
+        nbIngredientsText.gameObject.SetActive(true);
+
+        //cookingTimer.timeStart = true;
+        actualTimer = maxTimer;
     }
 
 }
