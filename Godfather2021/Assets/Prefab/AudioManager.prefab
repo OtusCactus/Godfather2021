@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5311937499515441763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5311937499515441762}
+  - component: {fileID: 5311937499515441761}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5311937499515441762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5311937499515441763}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5311937499515441761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5311937499515441763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62596334241208b4ba0a409ed198f82e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffects:
+  - clipName: CutMeat
+    clip:
+    - {fileID: 8300000, guid: 1d501f53bd49361408b0459407cd1a79, type: 3}
+    volume: 1
+    priority: 150
+    loop: 0
+    source: {fileID: 0}
+  - clipName: CutVege
+    clip:
+    - {fileID: 8300000, guid: bb9dfb2c2981b9346ad071bc82c13d54, type: 3}
+    volume: 1
+    priority: 150
+    loop: 0
+    source: {fileID: 0}
+  - clipName: Drop
+    clip:
+    - {fileID: 8300000, guid: 5997964663e67ed4eaae10edc0656b1b, type: 3}
+    volume: 0.75
+    priority: 250
+    loop: 0
+    source: {fileID: 0}
+  - clipName: Grab
+    clip:
+    - {fileID: 8300000, guid: 76bb7cda573045749a54bb28579d5794, type: 3}
+    volume: 1
+    priority: 250
+    loop: 0
+    source: {fileID: 0}
+  - clipName: Button
+    clip:
+    - {fileID: 8300000, guid: 3ac8631e36f8efe4ca03448205dd261a, type: 3}
+    volume: 1
+    priority: 150
+    loop: 0
+    source: {fileID: 0}
+  - clipName: Music
+    clip:
+    - {fileID: 8300000, guid: f1279e8263accb04d85bf7c6bb4ed940, type: 3}
+    volume: 0.03
+    priority: 256
+    loop: 0
+    source: {fileID: 0}
