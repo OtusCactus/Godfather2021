@@ -32,6 +32,7 @@ public class Knife : MonoBehaviour, IDropHandler
     {
         GetComponent<DragDrop>().canDrop = false;
         //shake rectTransform
+        GetComponent<RectTransform>().SetSiblingIndex(InterfaceManager.instance.gamePanel.transform.childCount - 1);
         anim.Play("A_KnifeCut");
         StartCoroutine(WaitAndStopCut(needToGoBack));
     }
