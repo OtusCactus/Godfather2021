@@ -116,6 +116,7 @@ public class GridManager : MonoBehaviour
             }
             go.transform.SetParent(InterfaceManager.instance.gamePanel.transform, true);
             go.GetComponent<DragDrop>().currentSlot = grid.transform.GetChild(childIndex).GetComponent<ItemSlot>();
+            go.GetComponent<RectTransform>().localScale = Vector3.one;
             grid.transform.GetChild(childIndex).GetComponent<ItemSlot>().isOccupied = true;
             grid.transform.GetChild(childIndex).GetComponent<ItemSlot>().myItem = go;
         }

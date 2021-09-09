@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class IngredientManager : MonoBehaviour
     private Image image;
     public IngredientState state = new IngredientState();
 
+    public bool isCutting = false;
 
 
     // Start is called before the first frame update
@@ -25,11 +27,13 @@ public class IngredientManager : MonoBehaviour
         image.color = myIngredient.colors[0];
     }
 
-    public void Cut()
+    public void Cut(bool needToGoBack)
     {
         if (!state.isCut)
         {
-            if(myIngredient.type == IngredientType.MEAT)
+            GetComponent<DragDrop>().canDrop = false;
+            isCutting = true;
+            if (myIngredient.type == IngredientType.MEAT)
             {
                 AudioManager.instance.Play("CutMeat");
             }
@@ -38,11 +42,25 @@ public class IngredientManager : MonoBehaviour
                 AudioManager.instance.Play("CutVege");
             }
             state.isCut = true;
-            image.sprite = myIngredient.sprites[1];
+            //shake rectTransform
+            StartCoroutine(WaitAndStopCut(needToGoBack));
         }
         else
         {
             print("déjà coupé");
+        }
+    }
+
+    private IEnumerator WaitAndStopCut(bool goBack)
+    {
+        yield return new WaitForSeconds(0.85f);
+        //a terme, wait for clip length
+        isCutting = false;
+        image.sprite = myIngredient.sprites[1];
+        GetComponent<DragDrop>().canDrop = true;
+        if (goBack)
+        {
+            GetComponent<RectTransform>().position = GetComponent<DragDrop>().previousPos;
         }
     }
 

@@ -17,15 +17,17 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             {
                 if (isKnife && eventData.pointerDrag.GetComponent<IngredientManager>())
                 {
-                    eventData.pointerDrag.GetComponent<IngredientManager>().Cut();
+                    eventData.pointerDrag.GetComponent<IngredientManager>().Cut(true);
+                    myItem.GetComponent<Knife>().OnCut(false);
                     print("couper slot");
                 }
                 else
                 {
                     if (eventData.pointerDrag.GetComponent<Knife>()) {
-                        if (myItem.GetComponent<IngredientManager>())
+                        if (myItem.GetComponent<IngredientManager>() && !myItem.GetComponent<IngredientManager>().state.isCut)
                         {
-                            myItem.GetComponent<IngredientManager>().Cut();
+                            eventData.pointerDrag.GetComponent<Knife>().OnCut(true);
+                            myItem.GetComponent<IngredientManager>().Cut(false);
                         }
                     }
                 }

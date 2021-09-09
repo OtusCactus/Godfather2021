@@ -4759,7 +4759,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: CutVege
     clip:
-    - {fileID: 8300000, guid: 614aef1111642134780e3bb91bdb99f4, type: 3}
+    - {fileID: 8300000, guid: bb9dfb2c2981b9346ad071bc82c13d54, type: 3}
     volume: 1
     priority: 150
     loop: 0
@@ -4780,7 +4780,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: Button
     clip:
-    - {fileID: 8300000, guid: 269771a3f485a1c4087da74da580efbd, type: 3}
+    - {fileID: 8300000, guid: 3ac8631e36f8efe4ca03448205dd261a, type: 3}
     volume: 1
     priority: 150
     loop: 0
