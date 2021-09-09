@@ -13,6 +13,8 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] private GameObject tutoPanel;
     public GameObject gamePanel;
 
+    public GameObject settingsWindow;
+
     public Text scoreText;
     public Image mealImage;
 
@@ -96,5 +98,20 @@ public class InterfaceManager : MonoBehaviour
     {
         AudioManager.instance.Play("Button");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void SettingsButton()
+    {
+        settingsWindow.SetActive(true);
+    }
+
+    public void CloseSettingsWindow()
+    {
+        settingsWindow.SetActive(false);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
