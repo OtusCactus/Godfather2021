@@ -13,6 +13,7 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] private GameObject resultPanel;
     [SerializeField] private GameObject tutoPanel;
     public GameObject gamePanel;
+    public GameObject grid;
 
     public GameObject settingsWindow;
 

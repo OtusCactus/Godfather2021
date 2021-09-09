@@ -11,7 +11,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         //if an object has been droppped, put it in the right place
-        if (eventData.pointerDrag != null && !eventData.pointerDrag.GetComponent<CookingTimer>())
+        if (eventData.pointerDrag != null)
         {
             if (isOccupied)
             {
@@ -20,6 +20,16 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                     eventData.pointerDrag.GetComponent<IngredientManager>().Cut(true);
                     myItem.GetComponent<Knife>().OnCut(false);
                     print("couper slot");
+                }
+                else if (myItem.GetComponent<CookingTimer>() && eventData.pointerDrag.GetComponent<IngredientManager>())
+                {
+                    eventData.pointerDrag.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position;
+                    eventData.pointerDrag.GetComponent<DragDrop>().previousPos = GetComponent<RectTransform>().position;
+                    eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
+
+                    eventData.pointerDrag.gameObject.SetActive(false);
+
+                    myItem.GetComponent<CookingTimer>().AddIngredient(eventData.pointerDrag.gameObject);
                 }
                 else
                 {
