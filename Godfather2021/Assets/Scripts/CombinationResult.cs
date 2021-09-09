@@ -38,6 +38,7 @@ public class CombinationResult : MonoBehaviour
             {
                 cookingTimer.TimerBack();
                 isOnPan = false;
+                cookingTimer.ResetPosition();
             }
             else
             {
