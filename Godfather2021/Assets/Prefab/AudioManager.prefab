@@ -89,7 +89,14 @@ MonoBehaviour:
   - clipName: Voice
     clip:
     - {fileID: 8300000, guid: 6beed79f00f2af84c9552dfcf394bdcc, type: 3}
-    volume: 0.8
+    volume: 0.5
     priority: 0
     loop: 0
+    source: {fileID: 0}
+  - clipName: PanCooking
+    clip:
+    - {fileID: 8300000, guid: 1945c6ca0071e9c45a27bc16618d8011, type: 3}
+    volume: 0.8
+    priority: 150
+    loop: 1
     source: {fileID: 0}

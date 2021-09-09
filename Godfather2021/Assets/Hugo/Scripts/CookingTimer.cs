@@ -31,6 +31,8 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
     public GameObject timers;
 
+    public bool isOnFire = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,26 @@ public class CookingTimer : MonoBehaviour, IDropHandler
         attention.SetActive(false);
         timers.SetActive(false);
         gameObject.transform.localScale = new Vector3(1, 1, 1);
+
+        GetComponent<DragDrop>().onDraggingEnd += () =>
+        {
+            if (GetComponent<DragDrop>().droppedOnSlot)
+            {
+                //cookingTimer.TimerBack();
+                //if (isOnFire)
+                //{
+                //    cookingTimer.ResetPosition();
+                //}
+                isOnFire = false;
+            }
+            else
+            {
+                if (isOnFire)
+                {
+                    //cookingTimer.mealServed = this;
+                }
+            }
+        };
     }
 
     // Update is called once per frame
@@ -105,6 +127,7 @@ public class CookingTimer : MonoBehaviour, IDropHandler
     {
         if(ingredientsInPan.Count != 0)
         {
+            AudioManager.instance.Play("PanCooking");
             timers.SetActive(true);
 
             gameObject.transform.localScale = new Vector3(2, 2, 2);
@@ -169,6 +192,7 @@ public class CookingTimer : MonoBehaviour, IDropHandler
         attention.gameObject.SetActive(false);
 
         gameObject.GetComponent<Animator>().SetBool("isCooking", false);
+        AudioManager.instance.Stop("PanCooking");
     }
 
     public void OnDrop(PointerEventData eventData)
