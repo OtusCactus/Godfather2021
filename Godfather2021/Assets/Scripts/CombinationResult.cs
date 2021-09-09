@@ -13,7 +13,7 @@ public class CombinationResult : MonoBehaviour
 
 
     public float mealScore = 0;
-
+    public bool isOnPan = false;
 
     private DragDrop dragAndDrop;
     public CookingTimer cookingTimer;
@@ -31,7 +31,18 @@ public class CombinationResult : MonoBehaviour
         };
         dragAndDrop.onDraggingEnd += () =>
         {
-            cookingTimer.TimerBack();
+            if (dragAndDrop.droppedOnSlot)
+            {
+                cookingTimer.TimerBack();
+                isOnPan = false;
+            }
+            else
+            {
+                if (isOnPan)
+                {
+                    cookingTimer.mealServed = this;
+                }
+            }
         };
     }
 

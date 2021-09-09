@@ -55,9 +55,12 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         if (droppedOnSlot == false)
         {
             rectTransform.position = previousPos;
-            currentSlot = previousSlot;
-            currentSlot.isOccupied = true;
-            currentSlot.myItem = gameObject;
+            if (previousSlot != null)
+            {
+                currentSlot = previousSlot;
+                currentSlot.isOccupied = true;
+                currentSlot.myItem = gameObject;
+            }
         }
 
         if (onDraggingEnd != null) onDraggingEnd.Invoke();
