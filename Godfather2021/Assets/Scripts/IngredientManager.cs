@@ -21,7 +21,7 @@ public class IngredientManager : MonoBehaviour
     public void Initialize()
     {
         image = GetComponent<Image>();
-        //image.sprite = sprites[0];
+        image.sprite = myIngredient.sprites[0];
         image.color = myIngredient.colors[0];
     }
 
@@ -31,6 +31,7 @@ public class IngredientManager : MonoBehaviour
         {
             state.isCut = true;
             image.color = myIngredient.colors[1];
+            image.sprite = myIngredient.sprites[1];
         }
         else
         {

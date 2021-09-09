@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 254edf53b07eefd41b8e886585d8e3c1, type: 3}
-  m_Name: Pasta
+  m_Name: Lamb
   m_EditorClassIdentifier: 
-  name: Pasta
-  sprites: []
+  name: Lamb
+  sprites:
+  - {fileID: 21300000, guid: eed1a89034fe7374390c497656163ba4, type: 3}
+  - {fileID: 21300000, guid: eed1a89034fe7374390c497656163ba4, type: 3}
   colors:
-  - {r: 1, g: 0.96289164, b: 0.23207551, a: 1}
-  - {r: 0.4339623, g: 0.3991197, b: 0.07614811, a: 1}
-  isCut: 0
-  isCooked: 0
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 1}
+  type: red

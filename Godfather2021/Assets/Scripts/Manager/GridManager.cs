@@ -106,7 +106,7 @@ public class GridManager : MonoBehaviour
                 go = Instantiate(item, correctPos, Quaternion.identity);
                 foreach (Ingredients ingredient in allIngredients)
                 {
-                    if(ingredient.name == name)
+                    if(name.Contains(ingredient.name))
                     {
                         go.GetComponent<IngredientManager>().myIngredient = ingredient;
                         go.GetComponent<IngredientManager>().Initialize();
