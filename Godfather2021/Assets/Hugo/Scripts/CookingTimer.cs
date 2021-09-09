@@ -31,6 +31,10 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
     public GameObject timers;
 
+    public Image statut;
+    public Sprite prepared;
+    public Sprite burnt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +45,8 @@ public class CookingTimer : MonoBehaviour, IDropHandler
         attention.SetActive(false);
         timers.SetActive(false);
         gameObject.transform.localScale = new Vector3(1, 1, 1);
+
+        statut.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -65,6 +71,9 @@ public class CookingTimer : MonoBehaviour, IDropHandler
                 nbIngredients = 0;
                 nbIngredientsText.gameObject.SetActive(false);
 
+                statut.gameObject.SetActive(true);
+                statut.sprite = prepared;
+
                 timeStart2 = true;
             }
         }
@@ -78,6 +87,7 @@ public class CookingTimer : MonoBehaviour, IDropHandler
     public void ResetPosition()
     {
         timers.SetActive(false);
+        statut.gameObject.SetActive(false);
 
         gameObject.transform.localScale = new Vector3(1, 1, 1);
 
@@ -150,6 +160,8 @@ public class CookingTimer : MonoBehaviour, IDropHandler
             mealServed.isBurnt = true;
             mealServed.ChangeAspect();
             mealServed.mealScore = Mathf.Ceil(mealServed.mealScore / 2);
+
+            statut.sprite = burnt;
 
             timeStart2 = false;
             attention.gameObject.SetActive(false);
