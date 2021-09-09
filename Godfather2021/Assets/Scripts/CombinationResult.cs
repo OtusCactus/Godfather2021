@@ -9,7 +9,7 @@ public class CombinationResult : MonoBehaviour
     public List<Ingredients> recipeIngredients = new List<Ingredients>();
     public List<IngredientState> recipeIngredientsState;
 
-    private Image image;
+    [HideInInspector] public Image image;
 
 
     public float mealScore = 0;
@@ -28,6 +28,9 @@ public class CombinationResult : MonoBehaviour
         {
             cookingTimer.mealServed = null;
             Debug.Log("Drag Meal");
+
+            image.color = new Color(image.color.r, image.color.g, image.color.b, 1f);
+
         };
         dragAndDrop.onDraggingEnd += () =>
         {

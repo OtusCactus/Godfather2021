@@ -82,7 +82,10 @@ public class InterfaceManager : MonoBehaviour
 
     public void Play()
     {
-        AudioManager.instance.Play("Button");
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.Play("Button");
+        }
         GameManager.instance.ChangeState(GameState.TUTO);
         if(AudioManager.instance != null)
         {
