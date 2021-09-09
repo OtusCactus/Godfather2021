@@ -2702,10 +2702,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 6793269193818014242, guid: b4ccfb0427e2f4340be6699e8e486af5, type: 3}
   knife: {fileID: 6502470369492224684, guid: 30e6f7db4a228ac40a8bb78923a1a19a, type: 3}
-  gridData: {fileID: 4900000, guid: 06ce7c934499fe8419ef47fcc10656b5, type: 3}
+  gridData: {fileID: 4900000, guid: 3d73e3b2b0eb347479603fe967496578, type: 3}
   allIngredients:
   - {fileID: 11400000, guid: 8836be89d354fe44c868f5e5ea594c3b, type: 2}
   - {fileID: 11400000, guid: a8ec8c61e49f0624b9da65ba29b40a63, type: 2}
+  - {fileID: 11400000, guid: 2762e579254c2374fb7ce43fb5bfade3, type: 2}
   - {fileID: 11400000, guid: 6edf032db849f7143b1b5098932743b4, type: 2}
   - {fileID: 11400000, guid: 53dfa6cf9317a334bb2cfb1a44ce64d5, type: 2}
   - {fileID: 11400000, guid: e3344566efce0244c9cb0af5ef10cad4, type: 2}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254edf53b07eefd41b8e886585d8e3c1, type: 3}
   m_Name: Thyme
   m_EditorClassIdentifier: 
-  name: Thyme
+  name: Thym
   sprites:
   - {fileID: 21300000, guid: 8fa7ff63422220746a3d5ee92a3a7cef, type: 3}
   - {fileID: 21300000, guid: f2cc7806f8ed3be4ba3cf09e79e5a22e, type: 3}

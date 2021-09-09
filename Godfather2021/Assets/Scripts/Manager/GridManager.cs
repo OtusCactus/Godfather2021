@@ -75,7 +75,7 @@ public class GridManager : MonoBehaviour
         bool inQuotes = false;
         for (int i = 0; i < line.Length; i++) // For each character
         {
-            if (line[i] == ';') // Comma
+            if (line[i] == ',') // Comma
             {
                 if (!inQuotes) // If not in quotes, end of current string, add it to result
                 {

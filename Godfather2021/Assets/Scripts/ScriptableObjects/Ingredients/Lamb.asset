@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254edf53b07eefd41b8e886585d8e3c1, type: 3}
   m_Name: Lamb
   m_EditorClassIdentifier: 
-  name: Lamb
+  name: Agneau
   sprites:
   - {fileID: 21300000, guid: eed1a89034fe7374390c497656163ba4, type: 3}
   - {fileID: 21300000, guid: 101e937d11e41db4ea712da3beeaec4e, type: 3}

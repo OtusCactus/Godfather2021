@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254edf53b07eefd41b8e886585d8e3c1, type: 3}
   m_Name: Leek
   m_EditorClassIdentifier: 
-  name: Leek
+  name: Poireau
   sprites:
   - {fileID: 21300000, guid: 3f084b01ff8a30d4b9920bff8e0f83b9, type: 3}
   - {fileID: 21300000, guid: 86299fdd480cd574d8e157af614d3366, type: 3}
