@@ -1,5 +1,6 @@
 using UnityEngine;
 using Rewired;
+using System.Collections;
 
 public enum GameState
 {
@@ -18,11 +19,13 @@ public class GameManager : MonoBehaviour
     public System.Action onStateChange;
 
     [Header("Settings")]
-    [SerializeField] private float roundTime = 60;
+    [SerializeField] private float roundTime = 15;
     private float currentTime = 0;
     public GameState state;
     private GameState previousState;
     private bool canPlay = false;
+    private bool lastMinutes = false;
+    [SerializeField] private Sprite plate;
 
     void Awake()
     {
@@ -43,12 +46,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canPlay)
+        if (lastMinutes)
         {
             currentTime -= Time.deltaTime;
             if(currentTime < 0)
             {
-                ChangeState(GameState.MENU);
+                LevelManager.instance.finalScore = 0;
+                InterfaceManager.instance.mealImage.sprite = plate;
+                ChangeState(GameState.RESULT);
             }
             InterfaceManager.instance.UpdateChronoText(currentTime.ToString("00"));
         }
@@ -68,13 +73,15 @@ public class GameManager : MonoBehaviour
             case GameState.MENU:
                 {
                     canPlay = false;
+                    lastMinutes = false;
                 }
                 break;
             case GameState.INGAME:
                 {
                     if(previousState == GameState.MENU)
                     {
-                        currentTime = roundTime;
+                        AudioManager.instance.Play("Voice");
+                        StartCoroutine(WaitForVoice());
                     }
                     canPlay = true;
                 }
@@ -98,4 +105,12 @@ public class GameManager : MonoBehaviour
         state = newState;
         if (onStateChange != null) onStateChange.Invoke();
     }
+
+    private IEnumerator WaitForVoice()
+    {
+        yield return new WaitForSeconds(AudioManager.instance.GetClipLength("Voice"));
+        currentTime = roundTime;
+        lastMinutes = true;
+    }
+
 }

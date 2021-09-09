@@ -86,3 +86,10 @@ MonoBehaviour:
     priority: 256
     loop: 0
     source: {fileID: 0}
+  - clipName: Voice
+    clip:
+    - {fileID: 8300000, guid: 6beed79f00f2af84c9552dfcf394bdcc, type: 3}
+    volume: 0.8
+    priority: 0
+    loop: 0
+    source: {fileID: 0}

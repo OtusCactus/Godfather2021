@@ -102,6 +102,7 @@ public class InterfaceManager : MonoBehaviour
 
     public void UpdateChronoText(string newText)
     {
+        chronoText.gameObject.SetActive(true);
         chronoText.text = newText;
     }
 
