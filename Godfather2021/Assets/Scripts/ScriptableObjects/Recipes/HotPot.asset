@@ -21,9 +21,16 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 0}
   ingredientsList:
-  - {fileID: 11400000, guid: 8836be89d354fe44c868f5e5ea594c3b, type: 2}
-  - {fileID: 11400000, guid: 526eaefe5fad5754ab80335de6e79643, type: 2}
   - {fileID: 11400000, guid: 6edf032db849f7143b1b5098932743b4, type: 2}
+  - {fileID: 11400000, guid: 53dfa6cf9317a334bb2cfb1a44ce64d5, type: 2}
+  - {fileID: 11400000, guid: 8836be89d354fe44c868f5e5ea594c3b, type: 2}
+  - {fileID: 11400000, guid: 2762e579254c2374fb7ce43fb5bfade3, type: 2}
+  - {fileID: 11400000, guid: 526eaefe5fad5754ab80335de6e79643, type: 2}
+  - {fileID: 11400000, guid: fa1231ff7132d754084068e2eb843b0b, type: 2}
+  - {fileID: 11400000, guid: 8d1c5f238b21d0f40bc3a0285346335f, type: 2}
+  - {fileID: 11400000, guid: e3344566efce0244c9cb0af5ef10cad4, type: 2}
+  - {fileID: 11400000, guid: a77303a7f15731145b37de810616bcb1, type: 2}
+  - {fileID: 11400000, guid: b36592bfc07a39c44987f0468c2ed283, type: 2}
   ingredientsStateList:
   - isCut: 1
     isCooked: 1
@@ -31,6 +38,27 @@ MonoBehaviour:
   - isCut: 1
     isCooked: 1
     isChecked: 0
+  - isCut: 0
+    isCooked: 1
+    isChecked: 0
+  - isCut: 0
+    isCooked: 1
+    isChecked: 0
   - isCut: 1
+    isCooked: 1
+    isChecked: 0
+  - isCut: 1
+    isCooked: 1
+    isChecked: 0
+  - isCut: 1
+    isCooked: 1
+    isChecked: 0
+  - isCut: 1
+    isCooked: 1
+    isChecked: 0
+  - isCut: 0
+    isCooked: 1
+    isChecked: 0
+  - isCut: 0
     isCooked: 1
     isChecked: 0
