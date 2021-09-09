@@ -19,7 +19,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 032b98d5153ee0d4b8ad6420068b9fe7, type: 3}
   colors:
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
+  - {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 0}
   ingredientsList:
   - {fileID: 11400000, guid: 8836be89d354fe44c868f5e5ea594c3b, type: 2}
   - {fileID: 11400000, guid: 526eaefe5fad5754ab80335de6e79643, type: 2}

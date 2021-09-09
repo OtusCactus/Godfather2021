@@ -109,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 109}
+  m_AnchoredPosition: {x: -178, y: 109}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3417830265398991410
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f9008c1462a0def408b4b9b1db6cfd0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f61352214374574996fe6c9698c0e57, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -476,7 +476,6 @@ MonoBehaviour:
   timeStart: 0
   timeStart2: 0
   mealToSpawn: {fileID: 9064190495259573570, guid: cb50c4ddb51172d4f85591f2d043ba53, type: 3}
-  burntMeal: {fileID: 0}
   ingredientsInPan: []
   mealServed: {fileID: 0}
   actualTimerBurn: 0

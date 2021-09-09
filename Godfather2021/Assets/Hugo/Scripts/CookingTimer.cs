@@ -16,7 +16,6 @@ public class CookingTimer : MonoBehaviour
     public bool timeStart2 = false;
 
     [SerializeField] private GameObject mealToSpawn;
-    [SerializeField] private GameObject burntMeal;
 
     public List<GameObject> ingredientsInPan = new List<GameObject>();
 
