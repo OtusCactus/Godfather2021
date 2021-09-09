@@ -30,6 +30,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         currentSlot.myItem = null;
         currentSlot = null;
         if (onDraggingBegin != null) onDraggingBegin.Invoke();
+
+        rectTransform.SetSiblingIndex(InterfaceManager.instance.gamePanel.transform.childCount - 1);
     }
 
     public void OnDrag(PointerEventData eventData)
