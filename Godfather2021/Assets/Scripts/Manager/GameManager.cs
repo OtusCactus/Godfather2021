@@ -5,7 +5,7 @@ public enum GameState
 {
     MENU,
     INGAME,
-    PAUSE,
+    TUTO,
     RESULT
 }
 
@@ -52,6 +52,13 @@ public class GameManager : MonoBehaviour
             }
             InterfaceManager.instance.UpdateChronoText(currentTime.ToString("00"));
         }
+        else if (state == GameState.TUTO)
+        {
+            if (Input.anyKeyDown)
+            {
+                ChangeState(GameState.INGAME);
+            }
+        }
     }
 
     public void ChangeState(GameState newState)
@@ -72,7 +79,7 @@ public class GameManager : MonoBehaviour
                     canPlay = true;
                 }
                 break;
-            case GameState.PAUSE:
+            case GameState.TUTO:
                 {
                     canPlay = false;
                 }

@@ -10,6 +10,7 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] private Text chronoText;
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private GameObject resultPanel;
+    [SerializeField] private GameObject tutoPanel;
     public GameObject gamePanel;
 
     public Text scoreText;
@@ -39,6 +40,7 @@ public class InterfaceManager : MonoBehaviour
                             {
                                 menuPanel.SetActive(true);
                                 //gamePanel.SetActive(false);
+                                tutoPanel.SetActive(false);
                                 resultPanel.SetActive(false);
                             }
                             break;
@@ -46,11 +48,16 @@ public class InterfaceManager : MonoBehaviour
                             {
                                 menuPanel.SetActive(false);
                                 gamePanel.SetActive(true);
+                                tutoPanel.SetActive(false);
                                 resultPanel.SetActive(false);
                             }
                             break;
-                        case GameState.PAUSE:
-                            //
+                        case GameState.TUTO:
+                            {
+                                menuPanel.SetActive(false);
+                                tutoPanel.SetActive(true);
+                                resultPanel.SetActive(false);
+                            }
                             break;
                         case GameState.RESULT:
                             {
@@ -75,7 +82,7 @@ public class InterfaceManager : MonoBehaviour
 
     public void Play()
     {
-        GameManager.instance.ChangeState(GameState.INGAME);
+        GameManager.instance.ChangeState(GameState.TUTO);
     }
 
     public void UpdateChronoText(string newText)

@@ -23,7 +23,7 @@ public class GridManager : MonoBehaviour
 
         GameManager.instance.onStateChange += () =>
         {
-            if(GameManager.instance.state == GameState.INGAME)
+            if(GameManager.instance.state == GameState.TUTO)
             {
                 GetColumnAndRow(grid, out column, out row);
                 ReadGrid();
