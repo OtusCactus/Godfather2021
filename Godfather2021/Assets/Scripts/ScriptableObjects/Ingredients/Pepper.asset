@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254edf53b07eefd41b8e886585d8e3c1, type: 3}
   m_Name: Pepper
   m_EditorClassIdentifier: 
-  name: Pepper
+  name: Poivre
   sprites:
   - {fileID: 21300000, guid: b6b070e4abcd3c54e83b9d6c34554e77, type: 3}
   - {fileID: 21300000, guid: 5a4ebfe35f3d51e479022f4fe8943a51, type: 3}

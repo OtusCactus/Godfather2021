@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6502470369492224686}
   - component: {fileID: 6502470369492224681}
   - component: {fileID: -3049816867767382909}
-  - component: {fileID: 6256335845752767673}
+  - component: {fileID: 6797246769092883688}
   m_Layer: 5
   m_Name: Knife
   m_TagString: Untagged
@@ -95,6 +95,7 @@ MonoBehaviour:
   droppedOnSlot: 0
   currentSlot: {fileID: 0}
   previousSlot: {fileID: 0}
+  canDrop: 1
 --- !u!225 &6502470369492224681
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -119,22 +120,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d5aeeb5398bae41b98273baf8ae1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &6256335845752767673
-Animator:
-  serializedVersion: 3
+  animSprites:
+  - {fileID: -860144460956862176, guid: 8d6d98b5c49acb64e9970529abb06cb3, type: 3}
+  - {fileID: 1111126408976664741, guid: 8d6d98b5c49acb64e9970529abb06cb3, type: 3}
+  - {fileID: 5339280976025068286, guid: 8d6d98b5c49acb64e9970529abb06cb3, type: 3}
+--- !u!111 &6797246769092883688
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6502470369492224684}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 96b762fedf06e6e4e8fc051fd26357ea, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 9bf36fe1d31322849b41688f7ab90bde, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 9bf36fe1d31322849b41688f7ab90bde, type: 2}
+  - {fileID: 7400000, guid: 0e62945cd293a99429e8f4ffaa85ee82, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

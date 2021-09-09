@@ -16,7 +16,6 @@ public class CookingTimer : MonoBehaviour
     public bool timeStart2 = false;
 
     [SerializeField] private GameObject mealToSpawn;
-    [SerializeField] private GameObject burntMeal;
 
     public List<GameObject> ingredientsInPan = new List<GameObject>();
 
@@ -45,6 +44,8 @@ public class CookingTimer : MonoBehaviour
         {
             actualTimer -= Time.deltaTime;
             timerImage.fillAmount = actualTimer / maxTimer;
+            gameObject.GetComponent<Animator>().SetBool("isCooking", true);
+
             if(actualTimer <= 0)
             {
 
@@ -66,21 +67,29 @@ public class CookingTimer : MonoBehaviour
 
     public void StartTimer()
     {
-        for (int i = 0; i < ingredientsInPan.Count; i++)
+        if(ingredientsInPan.Count != 0)
         {
-            ingredientsInPan[i].GetComponent<IngredientManager>().state.isCooked = true;
-            ingredientsInPan[i].SetActive(false);
+            for (int i = 0; i < ingredientsInPan.Count; i++)
+            {
+                ingredientsInPan[i].GetComponent<IngredientManager>().state.isCooked = true;
+                ingredientsInPan[i].SetActive(false);
+            }
+            timeStart = true;
+
+            GameObject go = Instantiate(mealToSpawn, GetComponent<RectTransform>().position, Quaternion.identity);
+            go.transform.SetParent(InterfaceManager.instance.gamePanel.transform, true);
+            mealServed = go.GetComponent<CombinationResult>();
+            go.GetComponent<RectTransform>().localScale = Vector3.one;
+
+            mealServed.cookingTimer = this;
+            mealServed.isOnPan = true;
+            
+            go.SetActive(false);
+
+            mealServed.Initialize(ingredientsInPan);
+
+            mealServed.image.color = new Color(mealServed.image.color.r, mealServed.image.color.g, mealServed.image.color.b, 0f);
         }
-        timeStart = true;
-
-        GameObject go = Instantiate(mealToSpawn, GetComponent<RectTransform>().position, Quaternion.identity);
-        go.transform.SetParent(InterfaceManager.instance.gamePanel.transform, true);
-        mealServed = go.GetComponent<CombinationResult>();
-        mealServed.cookingTimer = this;
-        mealServed.isOnPan = true;
-        go.SetActive(false);
-
-        mealServed.Initialize(ingredientsInPan);
 
     }
 
@@ -118,5 +127,10 @@ public class CookingTimer : MonoBehaviour
         actualTimerBurn = maxTimerBurn;
         timeStart2 = false;
         attention.gameObject.SetActive(false);
+
+        gameObject.GetComponent<Animator>().SetBool("isCooking", false);
     }
+
+
+    
 }

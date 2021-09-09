@@ -75,7 +75,7 @@ public class GridManager : MonoBehaviour
         bool inQuotes = false;
         for (int i = 0; i < line.Length; i++) // For each character
         {
-            if (line[i] == ';') // Comma
+            if (line[i] == ',') // Comma
             {
                 if (!inQuotes) // If not in quotes, end of current string, add it to result
                 {
@@ -116,6 +116,7 @@ public class GridManager : MonoBehaviour
             }
             go.transform.SetParent(InterfaceManager.instance.gamePanel.transform, true);
             go.GetComponent<DragDrop>().currentSlot = grid.transform.GetChild(childIndex).GetComponent<ItemSlot>();
+            go.GetComponent<RectTransform>().localScale = Vector3.one;
             grid.transform.GetChild(childIndex).GetComponent<ItemSlot>().isOccupied = true;
             grid.transform.GetChild(childIndex).GetComponent<ItemSlot>().myItem = go;
         }

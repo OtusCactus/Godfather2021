@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254edf53b07eefd41b8e886585d8e3c1, type: 3}
   m_Name: Beet
   m_EditorClassIdentifier: 
-  name: Beet
+  name: Betterave
   sprites:
   - {fileID: 21300000, guid: 4d568c447af05c542a860c276227983f, type: 3}
   - {fileID: 21300000, guid: 1b4ec62cd9b41ea4c882f05e3cee780f, type: 3}

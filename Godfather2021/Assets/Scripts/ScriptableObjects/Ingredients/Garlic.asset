@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254edf53b07eefd41b8e886585d8e3c1, type: 3}
   m_Name: Garlic
   m_EditorClassIdentifier: 
-  name: Garlic
+  name: Ail
   sprites:
   - {fileID: 21300000, guid: 666317afbbaec15498440f2efa5ca743, type: 3}
   - {fileID: 21300000, guid: f796c88a4ef4a654f9a29e3c8ef325ea, type: 3}

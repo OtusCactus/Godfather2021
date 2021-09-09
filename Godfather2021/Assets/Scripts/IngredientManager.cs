@@ -1,7 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 
 public class IngredientManager : MonoBehaviour
@@ -11,7 +11,7 @@ public class IngredientManager : MonoBehaviour
     private Image image;
     public IngredientState state = new IngredientState();
 
-    public GameObject knife;
+    public bool isCutting = false;
 
 
     // Start is called before the first frame update
@@ -27,12 +27,13 @@ public class IngredientManager : MonoBehaviour
         image.color = myIngredient.colors[0];
     }
 
-    public void Cut()
+    public void Cut(bool needToGoBack)
     {
         if (!state.isCut)
         {
-            StartCoroutine("CutAnimation");
-            if(myIngredient.type == IngredientType.MEAT)
+            GetComponent<DragDrop>().canDrop = false;
+            isCutting = true;
+            if (myIngredient.type == IngredientType.MEAT)
             {
                 AudioManager.instance.Play("CutMeat");
             }
@@ -41,7 +42,8 @@ public class IngredientManager : MonoBehaviour
                 AudioManager.instance.Play("CutVege");
             }
             state.isCut = true;
-            image.sprite = myIngredient.sprites[1];
+            //shake rectTransform
+            StartCoroutine(WaitAndStopCut(needToGoBack));
         }
         else
         {
@@ -49,12 +51,17 @@ public class IngredientManager : MonoBehaviour
         }
     }
 
-    private IEnumerator CutAnimation()
+    private IEnumerator WaitAndStopCut(bool goBack)
     {
-        Debug.Log("patate");
-        knife.GetComponent<Animator>().SetBool("isCut", true);
-        yield return new WaitForSeconds(0.3f);
-        knife.GetComponent<Animator>().SetBool("isCut", false);
+        yield return new WaitForSeconds(0.85f);
+        //a terme, wait for clip length
+        isCutting = false;
+        image.sprite = myIngredient.sprites[1];
+        GetComponent<DragDrop>().canDrop = true;
+        if (goBack)
+        {
+            GetComponent<RectTransform>().position = GetComponent<DragDrop>().previousPos;
+        }
     }
 
 }

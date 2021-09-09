@@ -8,12 +8,16 @@ public class InterfaceManager : MonoBehaviour
 
     public Canvas canvas;
     [SerializeField] private Text chronoText;
+    [Header("Panels")]
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private GameObject resultPanel;
     [SerializeField] private GameObject tutoPanel;
     public GameObject gamePanel;
 
     public GameObject settingsWindow;
+
+    [Space()]
+
 
     public Text scoreText;
     public Image mealImage;
@@ -84,9 +88,15 @@ public class InterfaceManager : MonoBehaviour
 
     public void Play()
     {
-        AudioManager.instance.Play("Button");
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.Play("Button");
+        }
         GameManager.instance.ChangeState(GameState.TUTO);
-        AudioManager.instance.Play("Music");
+        if(AudioManager.instance != null)
+        {
+            AudioManager.instance.Play("Music");
+        }
     }
 
     public void UpdateChronoText(string newText)

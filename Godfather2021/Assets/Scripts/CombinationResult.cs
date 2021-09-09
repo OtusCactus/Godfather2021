@@ -9,7 +9,7 @@ public class CombinationResult : MonoBehaviour
     public List<Ingredients> recipeIngredients = new List<Ingredients>();
     public List<IngredientState> recipeIngredientsState;
 
-    private Image image;
+    [HideInInspector] public Image image;
 
 
     public float mealScore = 0;
@@ -28,6 +28,9 @@ public class CombinationResult : MonoBehaviour
         {
             cookingTimer.mealServed = null;
             Debug.Log("Drag Meal");
+
+            image.color = new Color(image.color.r, image.color.g, image.color.b, 1f);
+
         };
         dragAndDrop.onDraggingEnd += () =>
         {
@@ -51,6 +54,8 @@ public class CombinationResult : MonoBehaviour
     {
         image = GetComponent<Image>();
 
+        image.color = LevelManager.instance.recipe.colors[0];
+
         foreach (GameObject ingrMan in allIngredients)
         {
             recipeIngredients.Add(ingrMan.GetComponent<IngredientManager>().myIngredient);
@@ -64,23 +69,23 @@ public class CombinationResult : MonoBehaviour
     {
         if (isBurnt)
         {
-            image.color = LevelManager.instance.recipe.colors[4];
+            image.color = LevelManager.instance.recipe.colors[1];
         }
         else if(mealScore > 75)
         {
-            image.color = LevelManager.instance.recipe.colors[0];
+            image.sprite = LevelManager.instance.recipe.sprites[0];
         }
         else if(mealScore > 50)
         {
-            image.color = LevelManager.instance.recipe.colors[1];
+            image.sprite = LevelManager.instance.recipe.sprites[1];
         }
         else if (mealScore > 25)
         {
-            image.color = LevelManager.instance.recipe.colors[2];
+            image.sprite = LevelManager.instance.recipe.sprites[2];
         }
         else
         {
-            image.color = LevelManager.instance.recipe.colors[3];
+            image.sprite = LevelManager.instance.recipe.sprites[3];
         }
     }
 }
