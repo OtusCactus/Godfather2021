@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Marmitte_anim
+  m_Name: Marmite_idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,17 +21,13 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: -7251766782822437083, guid: bccc60667d24a614c9831814377be2e8, type: 3}
-    - time: 0.4
-      value: {fileID: -7048789521870282911, guid: bccc60667d24a614c9831814377be2e8, type: 3}
-    - time: 0.8
-      value: {fileID: 6603815481340887213, guid: bccc60667d24a614c9831814377be2e8, type: 3}
-    - time: 1.2
-      value: {fileID: -4071556162393576447, guid: bccc60667d24a614c9831814377be2e8, type: 3}
+    - time: 0.8333333
+      value: {fileID: -7251766782822437083, guid: bccc60667d24a614c9831814377be2e8, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
     script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_SampleRate: 5
+  m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -47,15 +43,13 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: -7251766782822437083, guid: bccc60667d24a614c9831814377be2e8, type: 3}
-    - {fileID: -7048789521870282911, guid: bccc60667d24a614c9831814377be2e8, type: 3}
-    - {fileID: 6603815481340887213, guid: bccc60667d24a614c9831814377be2e8, type: 3}
-    - {fileID: -4071556162393576447, guid: bccc60667d24a614c9831814377be2e8, type: 3}
+    - {fileID: -7251766782822437083, guid: bccc60667d24a614c9831814377be2e8, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.4000001
+    m_StopTime: 0.84999996
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
