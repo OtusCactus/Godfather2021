@@ -58,6 +58,7 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
                 mealServed.ChangeAspect();
                 mealServed.gameObject.SetActive(true);
+                nbIngredients = 0;
                 nbIngredientsText.gameObject.SetActive(false);
 
                 timeStart2 = true;
