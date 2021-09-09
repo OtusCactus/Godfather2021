@@ -2251,7 +2251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1d98bac199d9e7e41b2530d40a8c14b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b4e31625a469a62488a7c833296d75c6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9436,12 +9436,13 @@ MonoBehaviour:
   timeStart: 0
   timeStart2: 0
   mealToSpawn: {fileID: 9064190495259573570, guid: cb50c4ddb51172d4f85591f2d043ba53, type: 3}
-  burntMeal: {fileID: 0}
   ingredientsInPan: []
   mealServed: {fileID: 0}
   actualTimerBurn: 0
   maxTimerBurn: 5
   attention: {fileID: 1305360625}
+  nbIngredientsText: {fileID: 0}
+  nbIngredients: 0
 --- !u!1 &1500734697
 GameObject:
   m_ObjectHideFlags: 0
