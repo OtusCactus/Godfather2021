@@ -82,6 +82,7 @@ public class InterfaceManager : MonoBehaviour
 
     public void Play()
     {
+        AudioManager.instance.Play("Button");
         GameManager.instance.ChangeState(GameState.TUTO);
         AudioManager.instance.Play("Music");
     }
@@ -93,6 +94,7 @@ public class InterfaceManager : MonoBehaviour
 
     public void RestartGame()
     {
+        AudioManager.instance.Play("Button");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
