@@ -60,4 +60,26 @@ public class AudioManager : MonoBehaviour
         }
         return fx.source.clip.length;
     }
+
+    public void ChangeVolumeSFX(float volume)
+    {
+        foreach (SoundEffect fx in soundEffects)
+        {
+            if(fx.source.name != "Music")
+            {
+                fx.source.volume = volume;
+            }
+        }
+    }
+
+    public void ChangeVolumeMusic(float volume)
+    {
+        foreach (SoundEffect fx in soundEffects)
+        {
+            if (fx.source.name == "Music")
+            {
+                fx.source.volume = volume;
+            }
+        }
+    }
 }

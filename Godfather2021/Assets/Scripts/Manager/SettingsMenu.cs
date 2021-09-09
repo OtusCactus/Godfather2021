@@ -49,9 +49,14 @@ public class SettingsMenu : MonoBehaviour
     /// <summary>
     /// Permet de changer le volume
     /// </summary>
-    public void SetVolume(float volume)
+    public void SetVolumeMusic(float volume)
     {
-        audioMixer.SetFloat("volume", volume);
+        AudioManager.instance.ChangeVolumeMusic(volume);
+    }
+
+    public void SetVolumeSFX(float volume)
+    {
+        AudioManager.instance.ChangeVolumeSFX(volume);
     }
 
     /// <summary>
