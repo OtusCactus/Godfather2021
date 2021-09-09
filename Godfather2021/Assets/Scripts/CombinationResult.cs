@@ -51,7 +51,11 @@ public class CombinationResult : MonoBehaviour
 
     public void ChangeAspect()
     {
-        if(mealScore > 75)
+        if (isBurnt)
+        {
+            image.color = LevelManager.instance.recipe.colors[4];
+        }
+        else if(mealScore > 75)
         {
             image.color = LevelManager.instance.recipe.colors[0];
         }
