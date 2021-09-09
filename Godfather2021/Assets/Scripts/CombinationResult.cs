@@ -11,7 +11,29 @@ public class CombinationResult : MonoBehaviour
 
     private Image image;
 
+
     public float mealScore = 0;
+
+
+    private DragDrop dragAndDrop;
+    public CookingTimer cookingTimer;
+
+    public bool isBurnt = false;
+
+    private void Start()
+    {
+        dragAndDrop = GetComponent<DragDrop>();
+
+        dragAndDrop.onDraggingBegin += () =>
+        {
+            cookingTimer.mealServed = null;
+            Debug.Log("Drag Meal");
+        };
+        dragAndDrop.onDraggingEnd += () =>
+        {
+            cookingTimer.TimerBack();
+        };
+    }
 
 
     public void Initialize(List<GameObject> allIngredients)

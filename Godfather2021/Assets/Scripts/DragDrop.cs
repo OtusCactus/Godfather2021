@@ -25,10 +25,15 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = .75f;
         droppedOnSlot = false;
-        previousSlot = currentSlot; 
-        currentSlot.isOccupied = false;
-        currentSlot.myItem = null;
-        currentSlot = null;
+
+        if(currentSlot != null)
+        {
+            previousSlot = currentSlot;
+            currentSlot.isOccupied = false;
+            currentSlot.myItem = null;
+            currentSlot = null;
+        }
+        
         if (onDraggingBegin != null) onDraggingBegin.Invoke();
 
         rectTransform.SetSiblingIndex(InterfaceManager.instance.gamePanel.transform.childCount - 1);
