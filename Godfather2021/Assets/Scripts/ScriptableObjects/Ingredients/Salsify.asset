@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Salsify
   sprites:
   - {fileID: 21300000, guid: b359f800adb6ede44b838c6f7d1ead38, type: 3}
-  - {fileID: 21300000, guid: b359f800adb6ede44b838c6f7d1ead38, type: 3}
+  - {fileID: 21300000, guid: a581f026407cc2c46bc014f99cba5e9f, type: 3}
   colors:
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
+  - {r: 0.3490566, g: 0.23907085, b: 0.23907085, a: 1}
   type: 1

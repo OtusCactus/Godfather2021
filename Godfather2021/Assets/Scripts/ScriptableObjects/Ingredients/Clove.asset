@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Clove
   sprites:
   - {fileID: 21300000, guid: 6c3330044fc8a23458a03f0fe4d7edd2, type: 3}
-  - {fileID: 21300000, guid: 6c3330044fc8a23458a03f0fe4d7edd2, type: 3}
+  - {fileID: 21300000, guid: 326e765f73a1e314fb7bb6c4b721d7dc, type: 3}
   colors:
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
+  - {r: 0.3490566, g: 0.23907085, b: 0.23907085, a: 1}
   type: 4

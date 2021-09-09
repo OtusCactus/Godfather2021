@@ -38,7 +38,6 @@ public class IngredientManager : MonoBehaviour
                 AudioManager.instance.Play("CutVege");
             }
             state.isCut = true;
-            image.color = myIngredient.colors[1];
             image.sprite = myIngredient.sprites[1];
         }
         else

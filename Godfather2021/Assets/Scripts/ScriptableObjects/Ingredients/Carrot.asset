@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Carrot
   sprites:
   - {fileID: 21300000, guid: d5511cb0a8f42e44ca027131a5251c46, type: 3}
-  - {fileID: 21300000, guid: d5511cb0a8f42e44ca027131a5251c46, type: 3}
+  - {fileID: 21300000, guid: c6bf4a7c4e2930c4fbe17d71b4e7edbe, type: 3}
   colors:
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.2264151, g: 0.2234247, b: 0.2234247, a: 1}
+  - {r: 0.3490566, g: 0.23907085, b: 0.23907085, a: 1}
   type: 1

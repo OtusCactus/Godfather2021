@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Celeri
   sprites:
   - {fileID: 21300000, guid: c2c56f2584394b94ab14433d4052b645, type: 3}
-  - {fileID: 21300000, guid: c2c56f2584394b94ab14433d4052b645, type: 3}
+  - {fileID: 21300000, guid: d970d78dfcadaff4a8e7f2b49b235dbb, type: 3}
   colors:
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.3207547, g: 0.31349233, b: 0.31349233, a: 1}
+  - {r: 0.3490566, g: 0.23907085, b: 0.23907085, a: 1}
   type: 3

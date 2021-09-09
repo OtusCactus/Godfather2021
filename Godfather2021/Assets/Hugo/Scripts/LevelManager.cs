@@ -232,9 +232,6 @@ public class LevelManager : MonoBehaviour
         //max score += ?? pour garder score max, à la fin, produit en croix (score * 100)/maxscore
         //plus tard, check grille si ingrédients coupé en trop
 
-
-
-
     }
 }
     

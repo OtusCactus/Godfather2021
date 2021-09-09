@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Radish
   sprites:
   - {fileID: 21300000, guid: f66f9e16fa2364f45acdd3efa1b55d6b, type: 3}
-  - {fileID: 21300000, guid: f66f9e16fa2364f45acdd3efa1b55d6b, type: 3}
+  - {fileID: 21300000, guid: ad77937711ec8e948adc243805868501, type: 3}
   colors:
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.3490566, g: 0.23907085, b: 0.23907085, a: 1}
   type: 2
