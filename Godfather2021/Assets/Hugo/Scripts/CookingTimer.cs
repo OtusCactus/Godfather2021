@@ -98,6 +98,8 @@ public class CookingTimer : MonoBehaviour
         {
             actualTimerBurn = 0;
             mealServed.isBurnt = true;
+            mealServed.ChangeAspect();
+            mealServed.mealScore = Mathf.Ceil(mealServed.mealScore / 2);
 
             timeStart2 = false;
             attention.gameObject.SetActive(false);
