@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254edf53b07eefd41b8e886585d8e3c1, type: 3}
   m_Name: BoneMarrow
   m_EditorClassIdentifier: 
-  name: Bone
+  name: Os
   sprites:
   - {fileID: 21300000, guid: 679f91454beb54a469aba2c14da4f699, type: 3}
   - {fileID: 21300000, guid: 636cfb3700de6c84394b065e80de65f4, type: 3}

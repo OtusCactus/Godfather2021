@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254edf53b07eefd41b8e886585d8e3c1, type: 3}
   m_Name: Horse
   m_EditorClassIdentifier: 
-  name: Horse
+  name: Cheval
   sprites:
   - {fileID: 21300000, guid: a8c76c9ba6e905c4894b807908d0c5eb, type: 3}
   - {fileID: 21300000, guid: f402a80a2e6644f408349ebb311999b2, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254edf53b07eefd41b8e886585d8e3c1, type: 3}
   m_Name: Clove
   m_EditorClassIdentifier: 
-  name: Clove
+  name: Girofle
   sprites:
   - {fileID: 21300000, guid: 6c3330044fc8a23458a03f0fe4d7edd2, type: 3}
   - {fileID: 21300000, guid: 326e765f73a1e314fb7bb6c4b721d7dc, type: 3}

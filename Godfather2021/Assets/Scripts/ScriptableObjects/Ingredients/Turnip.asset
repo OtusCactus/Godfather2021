@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254edf53b07eefd41b8e886585d8e3c1, type: 3}
   m_Name: Turnip
   m_EditorClassIdentifier: 
-  name: Turnip
+  name: Navet
   sprites:
   - {fileID: 21300000, guid: bd478543ceedf4849a0a1040c8686da9, type: 3}
   - {fileID: 21300000, guid: 997ca103a45666d438357b35ecbf8274, type: 3}
