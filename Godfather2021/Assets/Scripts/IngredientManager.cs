@@ -61,6 +61,7 @@ public class IngredientManager : MonoBehaviour
         if (goBack)
         {
             GetComponent<RectTransform>().position = GetComponent<DragDrop>().previousPos;
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0);
         }
     }
 
