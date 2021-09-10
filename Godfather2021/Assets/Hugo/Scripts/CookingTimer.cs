@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class CookingTimer : MonoBehaviour, IDropHandler
 {
@@ -40,6 +42,9 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
     private bool inPause = false;
 
+    public Volume volumeScene;
+    private DepthOfField dOf;
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +57,9 @@ public class CookingTimer : MonoBehaviour, IDropHandler
         timers.SetActive(false);
         gameObject.transform.localScale = new Vector3(1, 1, 1);
 
+        volumeScene = FindObjectOfType<Camera>().GetComponent<Volume>();
+        dOf = volumeScene.profile.components.Find(x => x.GetType() == typeof(DepthOfField)) as DepthOfField;
+        dOf.focalLength.value = 90f;
 
         GetComponent<DragDrop>().onDraggingEnd += () =>
         {
@@ -59,7 +67,8 @@ public class CookingTimer : MonoBehaviour, IDropHandler
             {
                 if (timeStart)
                 {
-                    print("hello");
+
+                    AudioManager.instance.Stop("PanCooking");
                     inPause = true;
                     timeStart = false;
                 }
@@ -78,6 +87,13 @@ public class CookingTimer : MonoBehaviour, IDropHandler
         if (timeStart)
         {
             actualTimer -= Time.deltaTime;
+
+            if(dOf.focalLength.value < 130)
+            {
+                dOf.focalLength.value += Time.deltaTime * 15;
+                Debug.Log("I see you : " + dOf.focalLength);
+            }
+
             timerImage.fillAmount = actualTimer / maxTimer;
             gameObject.GetComponent<Animator>().SetBool("isCooking", true);
             GameManager.instance.panWarmer.SetBool("isCooking", true);
@@ -114,8 +130,12 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
     public void ResetPosition()
     {
+        ingredientsInPan.Clear();
+        isOnFire = false;
         timers.SetActive(false);
         statut.gameObject.SetActive(false);
+
+        dOf.focalLength.value = 90f;
 
         gameObject.transform.localScale = new Vector3(1, 1, 1);
 
@@ -183,6 +203,12 @@ public class CookingTimer : MonoBehaviour, IDropHandler
     {
 
         actualTimerBurn -= Time.deltaTime;
+
+        if (dOf.focalLength.value < 130)
+        {
+            dOf.focalLength.value += Time.deltaTime * 10;
+            Debug.Log("I see you : " + dOf.focalLength);
+        }
 
         if (actualTimerBurn <= 0)
         {
