@@ -17,15 +17,32 @@ public class SettingsMenu : MonoBehaviour
     private Resolution[] resolutions;
 
     public Slider musicSlider;
+    public Slider sfxSlider;
 
-    private float volumeSFX;
-    private float volumeMusic;
+    private static float volumeSFX;
+    private static float volumeMusic;
+
+    //private bool valueSet = false;
 
     public void Start()
     {
         //Permet de stocker la valeur de l'audioMixer dans la variable musicValueForSlider
         audioMixer.GetFloat("volume", out float musicValueForSlider);
-        musicSlider.value = musicValueForSlider;
+
+        if (volumeMusic == 0)
+        {
+            musicSlider.value = 0.01f;
+            volumeMusic = 0.01f;
+        }
+
+        if(volumeSFX == 0)
+        {
+            sfxSlider.value = 0.5f;
+            volumeSFX = 0.5f;
+        }
+
+        musicSlider.value = volumeMusic;
+        sfxSlider.value = volumeSFX;
 
         resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
         resolutionDropdown.ClearOptions();
@@ -48,10 +65,15 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log(volumeMusic + " / " + volumeSFX);
+        musicSlider.value = volumeMusic;
+        sfxSlider.value = volumeSFX;
         AudioManager.instance.ChangeVolumeMusic(volumeMusic);
         AudioManager.instance.ChangeVolumeSFX(volumeSFX);
     }
