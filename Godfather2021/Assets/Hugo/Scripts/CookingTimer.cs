@@ -38,6 +38,8 @@ public class CookingTimer : MonoBehaviour, IDropHandler
     public Sprite prepared;
     public Sprite burnt;
 
+    private bool inPause = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -53,20 +55,14 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
         GetComponent<DragDrop>().onDraggingEnd += () =>
         {
-            if (GetComponent<DragDrop>().droppedOnSlot)
+
+            if (!isOnFire)
             {
-                //cookingTimer.TimerBack();
-                //if (isOnFire)
-                //{
-                //    cookingTimer.ResetPosition();
-                //}
-                isOnFire = false;
-            }
-            else
-            {
-                if (isOnFire)
+                if (timeStart)
                 {
-                    //cookingTimer.mealServed = this;
+                    print("hello");
+                    inPause = true;
+                    timeStart = false;
                 }
             }
         };
@@ -101,7 +97,12 @@ public class CookingTimer : MonoBehaviour, IDropHandler
                 statut.sprite = prepared;
 
                 timeStart2 = true;
+                mealServed.gameObject.transform.SetAsLastSibling();
             }
+        }
+        else if (inPause)
+        {
+            gameObject.GetComponent<Animator>().SetBool("isCooking", false);
         }
 
         if (timeStart2 && mealServed != null)
@@ -132,6 +133,7 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
                     InterfaceManager.instance.grid.transform.GetChild(i).GetComponent<ItemSlot>().isOccupied = true;
                     InterfaceManager.instance.grid.transform.GetChild(i).GetComponent<ItemSlot>().myItem = this.gameObject;
+                    return;
                 }
             }
         }
@@ -144,7 +146,6 @@ public class CookingTimer : MonoBehaviour, IDropHandler
             AudioManager.instance.Play("PanCooking");
             timers.SetActive(true);
 
-            gameObject.transform.localScale = new Vector3(2, 2, 2);
 
             for (int i = 0; i < ingredientsInPan.Count; i++)
             {
@@ -153,19 +154,26 @@ public class CookingTimer : MonoBehaviour, IDropHandler
             }
             timeStart = true;
 
-            GameObject go = Instantiate(mealToSpawn, GetComponent<RectTransform>().position, Quaternion.identity);
-            go.transform.SetParent(InterfaceManager.instance.gamePanel.transform, true);
-            mealServed = go.GetComponent<CombinationResult>();
-            go.GetComponent<RectTransform>().localScale = Vector3.one;
+            if (!inPause)
+            {
+                GameObject go = Instantiate(mealToSpawn, GetComponent<RectTransform>().position, Quaternion.identity);
+                go.transform.SetParent(InterfaceManager.instance.gamePanel.transform, true);
+                mealServed = go.GetComponent<CombinationResult>();
+                go.GetComponent<RectTransform>().localScale = Vector3.one;
 
-            mealServed.cookingTimer = this;
-            mealServed.isOnPan = true;
-            
-            go.SetActive(false);
+                mealServed.cookingTimer = this;
+                mealServed.isOnPan = true;
 
-            mealServed.Initialize(ingredientsInPan);
+                go.SetActive(false);
 
-            mealServed.image.color = new Color(mealServed.image.color.r, mealServed.image.color.g, mealServed.image.color.b, 0f);
+                mealServed.Initialize(ingredientsInPan);
+
+                mealServed.image.color = new Color(mealServed.image.color.r, mealServed.image.color.g, mealServed.image.color.b, 0f);
+            }
+            else
+            {
+                inPause = false;
+            }
         }
 
     }

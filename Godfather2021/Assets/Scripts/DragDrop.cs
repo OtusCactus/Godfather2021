@@ -7,7 +7,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private CanvasGroup canvasGroup;
     [HideInInspector] public Vector2 previousPos;
     [HideInInspector] public bool droppedOnSlot = false;
-    [HideInInspector] public ItemSlot currentSlot;
+    public ItemSlot currentSlot;
     [HideInInspector] public ItemSlot previousSlot;
 
     public System.Action onDraggingEnd;
@@ -38,7 +38,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         
         if (onDraggingBegin != null) onDraggingBegin.Invoke();
 
-        rectTransform.SetSiblingIndex(InterfaceManager.instance.gamePanel.transform.childCount - 1);
+        rectTransform.SetAsLastSibling(); ;
     }
 
     public void OnDrag(PointerEventData eventData)

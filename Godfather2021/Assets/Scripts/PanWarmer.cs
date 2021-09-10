@@ -15,6 +15,9 @@ public class PanWarmer : MonoBehaviour, IDropHandler
                 eventData.pointerDrag.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position;
                 //eventData.pointerDrag.GetComponent<DragDrop>().previousPos = GetComponent<RectTransform>().position;
                 eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
+                eventData.pointerDrag.GetComponent<CookingTimer>().isOnFire = true;
+
+                eventData.pointerDrag.gameObject.transform.localScale = new Vector3(2, 2, 2);
 
                 eventData.pointerDrag.GetComponent<CookingTimer>().StartTimer();
             }

@@ -51,6 +51,11 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 eventData.pointerDrag.GetComponent<DragDrop>().currentSlot = this;
                 isOccupied = true;
                 myItem = eventData.pointerDrag.gameObject;
+                if (eventData.pointerDrag.GetComponent<CookingTimer>())
+                {
+                    eventData.pointerDrag.gameObject.transform.localScale = new Vector3(1, 1, 1);
+                    eventData.pointerDrag.GetComponent<CookingTimer>().isOnFire = false;
+                }
             }
         }
     }
