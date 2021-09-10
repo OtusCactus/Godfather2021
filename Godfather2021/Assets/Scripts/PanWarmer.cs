@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PanWarmer : MonoBehaviour, IDropHandler
 {
-    [SerializeField] private RectTransform panPosition;
+    public RectTransform panPosition;
 
     public void OnDrop(PointerEventData eventData)
     {
