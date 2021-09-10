@@ -207,7 +207,7 @@ public class CookingTimer : MonoBehaviour, IDropHandler
         if (dOf.focalLength.value < 130)
         {
             dOf.focalLength.value += Time.deltaTime * 10;
-            Debug.Log("I see you : " + dOf.focalLength);
+            //Debug.Log("I see you : " + dOf.focalLength);
         }
 
         if (actualTimerBurn <= 0)
