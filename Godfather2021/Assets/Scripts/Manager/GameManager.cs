@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     private bool canPlay = false;
     private bool lastMinutes = false;
     [SerializeField] private Sprite plate;
+    public Animator panWarmer;
 
     void Awake()
     {

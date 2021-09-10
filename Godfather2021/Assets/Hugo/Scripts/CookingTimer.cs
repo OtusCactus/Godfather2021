@@ -81,8 +81,9 @@ public class CookingTimer : MonoBehaviour, IDropHandler
             actualTimer -= Time.deltaTime;
             timerImage.fillAmount = actualTimer / maxTimer;
             gameObject.GetComponent<Animator>().SetBool("isCooking", true);
+            GameManager.instance.panWarmer.SetBool("isCooking", true);
 
-            if(actualTimer <= 0)
+            if (actualTimer <= 0)
             {
 
                 timeStart = false;
@@ -103,6 +104,7 @@ public class CookingTimer : MonoBehaviour, IDropHandler
         else if (inPause)
         {
             gameObject.GetComponent<Animator>().SetBool("isCooking", false);
+            GameManager.instance.panWarmer.SetBool("isCooking", false);
         }
 
         if (timeStart2 && mealServed != null)
@@ -217,6 +219,7 @@ public class CookingTimer : MonoBehaviour, IDropHandler
         attention.gameObject.SetActive(false);
 
         gameObject.GetComponent<Animator>().SetBool("isCooking", false);
+        GameManager.instance.panWarmer.SetBool("isCooking", false);
         AudioManager.instance.Stop("PanCooking");
     }
 
