@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class SettingsMenu : MonoBehaviour
     private Resolution[] resolutions;
 
     public Slider musicSlider;
+
+    private float volumeSFX;
+    private float volumeMusic;
 
     public void Start()
     {
@@ -46,17 +50,25 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        AudioManager.instance.ChangeVolumeMusic(volumeMusic);
+        AudioManager.instance.ChangeVolumeSFX(volumeSFX);
+    }
+
     /// <summary>
     /// Permet de changer le volume
     /// </summary>
     public void SetVolumeMusic(float volume)
     {
         AudioManager.instance.ChangeVolumeMusic(volume);
+        volumeMusic = volume;
     }
 
     public void SetVolumeSFX(float volume)
     {
         AudioManager.instance.ChangeVolumeSFX(volume);
+        volumeSFX = volume;
     }
 
     /// <summary>

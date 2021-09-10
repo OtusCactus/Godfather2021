@@ -37,6 +37,21 @@ public class AudioManager : MonoBehaviour
         }
         fx.source.clip = fx.clip[UnityEngine.Random.Range(0, fx.clip.Length)];
         fx.source.Play();
+
+
+        GameManager.instance.onStateChange += () => {
+            if (GameManager.instance.state == GameState.RESULT)
+            {
+                foreach (SoundEffect fx in soundEffects)
+                {
+                    if (fx.clipName != "Music")
+                    {
+                        fx.source.Stop();
+                    }
+                }
+            }
+
+        };
     }
 
     public void Stop(string name)
