@@ -8371,7 +8371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8fbaa1210300645889d3e1de42be91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundTime: 15
+  roundTime: 20
   state: 0
   plate: {fileID: 21300000, guid: 7860712b198a0334ca1830ba992fba69, type: 3}
 --- !u!1 &1852758284
