@@ -47,16 +47,19 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lastMinutes)
+        if (state == GameState.INGAME)
         {
-            currentTime -= Time.deltaTime;
-            if(currentTime < 0)
+            if (lastMinutes)
             {
-                LevelManager.instance.finalScore = 0;
-                InterfaceManager.instance.mealImage.sprite = plate;
-                ChangeState(GameState.RESULT);
+                currentTime -= Time.deltaTime;
+                if (currentTime < 0)
+                {
+                    LevelManager.instance.finalScore = 0;
+                    InterfaceManager.instance.mealImage.sprite = plate;
+                    ChangeState(GameState.RESULT);
+                }
+                InterfaceManager.instance.UpdateChronoText(currentTime.ToString("00"));
             }
-            InterfaceManager.instance.UpdateChronoText(currentTime.ToString("00"));
         }
         else if (state == GameState.TUTO)
         {

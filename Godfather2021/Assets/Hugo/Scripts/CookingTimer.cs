@@ -84,7 +84,7 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
             if (actualTimer <= 0)
             {
-
+                AudioManager.instance.Play("Bip");
                 timeStart = false;
                 actualTimer = 0;
 
@@ -240,6 +240,7 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
     public void AddIngredient(GameObject objectToAdd)
     {
+        AudioManager.instance.Play("Ploof");
         ingredientsInPan.Add(objectToAdd);
         nbIngredients++;
         nbIngredientsText.text = "x" + nbIngredients;
