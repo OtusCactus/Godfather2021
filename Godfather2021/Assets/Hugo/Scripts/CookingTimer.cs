@@ -183,12 +183,6 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
         actualTimerBurn -= Time.deltaTime;
 
-        if (actualTimerBurn <= maxTimerBurn / 2)
-        {
-            Debug.Log("ATTENTION");
-            attention.gameObject.SetActive(true);
-        }
-
         if (actualTimerBurn <= 0)
         {
             actualTimerBurn = 0;
@@ -202,6 +196,13 @@ public class CookingTimer : MonoBehaviour, IDropHandler
             attention.gameObject.SetActive(false);
 
             TimerBack();
+        }
+
+        if (actualTimerBurn <= maxTimerBurn / 2)
+        {
+            Debug.Log("ATTENTION");
+            attention.gameObject.SetActive(true);
+            attention.GetComponent<Animation>()["A_WarningBlink"].speed = 1f * (((maxTimerBurn / 2f) / actualTimerBurn) / 2.5f);
         }
     }
 
