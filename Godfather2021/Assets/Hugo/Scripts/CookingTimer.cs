@@ -59,6 +59,8 @@ public class CookingTimer : MonoBehaviour, IDropHandler
             {
                 if (timeStart)
                 {
+
+                    AudioManager.instance.Stop("PanCooking");
                     print("hello");
                     inPause = true;
                     timeStart = false;
