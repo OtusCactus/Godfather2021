@@ -8673,6 +8673,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutoPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 1212651187663645946, guid: febc9f3273182ab4592001c4860ddc4a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1212651187663645947, guid: febc9f3273182ab4592001c4860ddc4a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
