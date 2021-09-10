@@ -75,6 +75,14 @@ public class CookingTimer : MonoBehaviour, IDropHandler
             }
         };
 
+        GameManager.instance.onStateChange += () =>
+        {
+            if(GameManager.instance.state != GameState.INGAME)
+            {
+                dOf.focalLength.value = 90f;
+            }
+        };
+
         statut.gameObject.SetActive(false);
 
     }

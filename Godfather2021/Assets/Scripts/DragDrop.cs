@@ -77,6 +77,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
                 else
                 {
                     rectTransform.position = previousPos;
+                    transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0);
                 }
             }
             if (previousSlot != null)
