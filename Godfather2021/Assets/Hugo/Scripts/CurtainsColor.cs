@@ -17,6 +17,8 @@ public class CurtainsColor : MonoBehaviour
                 ChangeAspectCurtains();
             }
         };
+
+        ChangeAspectCurtains();
     }
 
     // Update is called once per frame
@@ -28,15 +30,15 @@ public class CurtainsColor : MonoBehaviour
     public void ChangeAspectCurtains()
     {
         
-        if (LevelManager.instance.finalScore > 75)
+        if (LevelManager.instance.finalScore >= 75)
         {
             gameObject.GetComponent<Image>().color = curtainsColor[0];
         }
-        else if (LevelManager.instance.finalScore > 50)
+        else if (LevelManager.instance.finalScore >= 50)
         {
             gameObject.GetComponent<Image>().color = curtainsColor[1];
         }
-        else if (LevelManager.instance.finalScore > 25)
+        else if (LevelManager.instance.finalScore >= 25)
         {
             gameObject.GetComponent<Image>().color = curtainsColor[2];
         }
