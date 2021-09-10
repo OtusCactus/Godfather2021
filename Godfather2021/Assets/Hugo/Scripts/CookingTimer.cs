@@ -61,7 +61,6 @@ public class CookingTimer : MonoBehaviour, IDropHandler
                 {
 
                     AudioManager.instance.Stop("PanCooking");
-                    print("hello");
                     inPause = true;
                     timeStart = false;
                 }
@@ -116,6 +115,8 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
     public void ResetPosition()
     {
+        ingredientsInPan.Clear();
+        isOnFire = false;
         timers.SetActive(false);
         statut.gameObject.SetActive(false);
 
