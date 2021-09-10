@@ -61,7 +61,7 @@ MonoBehaviour:
   - clipName: Drop
     clip:
     - {fileID: 8300000, guid: 5997964663e67ed4eaae10edc0656b1b, type: 3}
-    volume: 0.75
+    volume: 1
     priority: 250
     loop: 0
     source: {fileID: 0}
@@ -88,15 +88,57 @@ MonoBehaviour:
     source: {fileID: 0}
   - clipName: Voice
     clip:
-    - {fileID: 8300000, guid: 6beed79f00f2af84c9552dfcf394bdcc, type: 3}
-    volume: 0.5
+    - {fileID: 8300000, guid: 2a49ce96e3acb094c9bf040f5ef12821, type: 3}
+    volume: 1
     priority: 0
     loop: 0
     source: {fileID: 0}
   - clipName: PanCooking
     clip:
     - {fileID: 8300000, guid: 1945c6ca0071e9c45a27bc16618d8011, type: 3}
-    volume: 0.8
+    volume: 1
     priority: 150
     loop: 1
+    source: {fileID: 0}
+  - clipName: Ploof
+    clip:
+    - {fileID: 8300000, guid: 5c54ca7b6310b7d4c835f41df4390820, type: 3}
+    volume: 1
+    priority: 150
+    loop: 0
+    source: {fileID: 0}
+  - clipName: WinGood
+    clip:
+    - {fileID: 8300000, guid: b29fd21286f3d494f9f1a3cb1a4bd2bd, type: 3}
+    volume: 1
+    priority: 150
+    loop: 0
+    source: {fileID: 0}
+  - clipName: WinPrettyGood
+    clip:
+    - {fileID: 8300000, guid: c8acb7ef29a940744ba153c55c652050, type: 3}
+    volume: 0.8
+    priority: 150
+    loop: 0
+    source: {fileID: 0}
+  - clipName: WinNotGood
+    clip:
+    - {fileID: 8300000, guid: 2925a1fb9da5a0442bc4c8d93cea7394, type: 3}
+    volume: 0.8
+    priority: 150
+    loop: 0
+    source: {fileID: 0}
+  - clipName: WinBad
+    clip:
+    - {fileID: 8300000, guid: 5ba14499ef98e1a43bfc66f92be7ed80, type: 3}
+    volume: 0.8
+    priority: 150
+    loop: 0
+    source: {fileID: 0}
+  - clipName: Bip
+    clip:
+    - {fileID: 8300000, guid: bf9796eb2202c7f4c87b41fa145c6a89, type: 3}
+    volume: 1
+    priority: 150
+    loop: 0
     source: {fileID: 0}
