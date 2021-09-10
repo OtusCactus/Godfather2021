@@ -55,7 +55,6 @@ public class CookingTimer : MonoBehaviour, IDropHandler
 
         GetComponent<DragDrop>().onDraggingEnd += () =>
         {
-
             if (!isOnFire)
             {
                 if (timeStart)

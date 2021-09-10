@@ -5,10 +5,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 {
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-    [HideInInspector] public Vector2 previousPos;
+    public Vector2 previousPos;
     [HideInInspector] public bool droppedOnSlot = false;
     public ItemSlot currentSlot;
-    [HideInInspector] public ItemSlot previousSlot;
+    public ItemSlot previousSlot;
 
     public System.Action onDraggingEnd;
     public System.Action onDraggingBegin;
@@ -62,13 +62,39 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         {
             if (canDrop)
             {
-                rectTransform.position = previousPos;
+                if (GetComponent<CookingTimer>())
+                {
+                    if (GetComponent<CookingTimer>().isOnFire)
+                    {
+                        rectTransform.position = GameManager.instance.panWarmer.GetComponent<PanWarmer>().panPosition.position;
+                    }
+                    else
+                    {
+                        rectTransform.position = previousPos;
+                    }
+                }
+                else
+                {
+                    rectTransform.position = previousPos;
+                }
             }
             if (previousSlot != null)
             {
-                currentSlot = previousSlot;
-                currentSlot.isOccupied = true;
-                currentSlot.myItem = gameObject;
+                if (GetComponent<CookingTimer>())
+                {
+                    if (!GetComponent<CookingTimer>().isOnFire)
+                    {
+                        currentSlot = previousSlot;
+                        currentSlot.isOccupied = true;
+                        currentSlot.myItem = gameObject;
+                    }
+                }
+                else
+                {
+                    currentSlot = previousSlot;
+                    currentSlot.isOccupied = true;
+                    currentSlot.myItem = gameObject;
+                }
             }
         }
 
