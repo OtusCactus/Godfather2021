@@ -19,7 +19,6 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 {
                     eventData.pointerDrag.GetComponent<IngredientManager>().Cut(true);
                     myItem.GetComponent<Knife>().OnCut(false);
-                    print("couper slot");
                 }
                 else if (myItem.GetComponent<CookingTimer>() && eventData.pointerDrag.GetComponent<IngredientManager>())
                 {
@@ -46,6 +45,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             else
             {
                 eventData.pointerDrag.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position;
+                eventData.pointerDrag.gameObject.transform.localPosition = new Vector3(eventData.pointerDrag.gameObject.transform.localPosition.x, eventData.pointerDrag.gameObject.transform.localPosition.y, 0);
                 eventData.pointerDrag.GetComponent<DragDrop>().previousPos = GetComponent<RectTransform>().position;
                 eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
                 eventData.pointerDrag.GetComponent<DragDrop>().currentSlot = this;

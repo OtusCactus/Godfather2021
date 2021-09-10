@@ -45,6 +45,7 @@ public class Knife : MonoBehaviour, IDropHandler
         if (goBack)
         {
             GetComponent<RectTransform>().position = dragAndDrop.previousPos;
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0);
         }
     }
 

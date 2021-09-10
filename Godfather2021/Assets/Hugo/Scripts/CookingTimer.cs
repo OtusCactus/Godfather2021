@@ -142,6 +142,7 @@ public class CookingTimer : MonoBehaviour, IDropHandler
         if (!GetComponent<DragDrop>().previousSlot.isOccupied)
         {
             GetComponent<RectTransform>().position = GetComponent<DragDrop>().previousPos;
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0);
         }
         else
         {
@@ -151,6 +152,7 @@ public class CookingTimer : MonoBehaviour, IDropHandler
                 {
                     Vector2 correctPos = InterfaceManager.instance.grid.transform.GetChild(i).GetComponent<RectTransform>().position;
                     GetComponent<RectTransform>().position = correctPos;
+                    transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0);
 
                     InterfaceManager.instance.grid.transform.GetChild(i).GetComponent<ItemSlot>().isOccupied = true;
                     InterfaceManager.instance.grid.transform.GetChild(i).GetComponent<ItemSlot>().myItem = this.gameObject;
