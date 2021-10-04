@@ -61,6 +61,18 @@ public class CookingTimer : MonoBehaviour, IDropHandler
         dOf = volumeScene.profile.components.Find(x => x.GetType() == typeof(DepthOfField)) as DepthOfField;
         dOf.focalLength.value = 90f;
 
+        GetComponent<DragDrop>().onDraggingBeginWithParam += (PointerEventData eventData) =>
+        {
+            if (mealServed != null && !timeStart && !inPause)
+            {
+                eventData.pointerDrag = mealServed.gameObject;
+                GetComponent<DragDrop>().canvasGroup.alpha = 1;
+                GetComponent<DragDrop>().canvasGroup.blocksRaycasts = true;
+                if (GetComponent<DragDrop>().onDraggingEnd != null) GetComponent<DragDrop>().onDraggingEnd.Invoke();
+                if(mealServed.GetComponent<DragDrop>().onDraggingBegin != null) mealServed.GetComponent<DragDrop>().onDraggingBegin.Invoke();
+            }
+        };
+
         GetComponent<DragDrop>().onDraggingEnd += () =>
         {
             if (!isOnFire)

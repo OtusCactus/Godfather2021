@@ -113,8 +113,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 118.16992, y: 4.9067383}
-  m_SizeDelta: {x: 242.46, y: 245.7505}
+  m_AnchoredPosition: {x: 107.133, y: 4.883}
+  m_SizeDelta: {x: 220.435, y: 223.426}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3109882452310421137
 CanvasRenderer:
@@ -263,8 +263,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 118.16992, y: 4.9067383}
-  m_SizeDelta: {x: 242.46, y: 245.7505}
+  m_AnchoredPosition: {x: 107.133, y: 4.883}
+  m_SizeDelta: {x: 220.435, y: 223.426}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3417830265069883548
 CanvasRenderer:
@@ -738,6 +738,7 @@ MonoBehaviour:
   statut: {fileID: 5753555221779453353}
   prepared: {fileID: 21300000, guid: 26303ab42bdc57443959037afaa83186, type: 3}
   burnt: {fileID: 21300000, guid: 71bb278f7a3a98d4e86ae00e377986a0, type: 3}
+  volumeScene: {fileID: 0}
 --- !u!95 &3417830267096962751
 Animator:
   serializedVersion: 3
@@ -820,8 +821,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 118.16992, y: 4.9067383}
-  m_SizeDelta: {x: 242.46, y: 245.7505}
+  m_AnchoredPosition: {x: 107.133, y: 4.883}
+  m_SizeDelta: {x: 220.435, y: 223.426}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3363867030839847747
 CanvasRenderer:
@@ -896,6 +897,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.125}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.7, y: -30}
+  m_AnchoredPosition: {x: -2.7, y: -42}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

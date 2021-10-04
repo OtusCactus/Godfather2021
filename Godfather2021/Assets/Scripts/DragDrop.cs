@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
     private RectTransform rectTransform;
-    private CanvasGroup canvasGroup;
+    [HideInInspector] public CanvasGroup canvasGroup;
     public Vector2 previousPos;
     [HideInInspector] public bool droppedOnSlot = false;
     public ItemSlot currentSlot;
@@ -12,6 +12,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public System.Action onDraggingEnd;
     public System.Action onDraggingBegin;
+    public System.Action<PointerEventData> onDraggingBeginWithParam;
 
     public bool canDrop = true;
 
@@ -35,8 +36,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             currentSlot.myItem = null;
             currentSlot = null;
         }
-        
+        int miaou = 21;
         if (onDraggingBegin != null) onDraggingBegin.Invoke();
+        if (onDraggingBeginWithParam != null) onDraggingBeginWithParam.Invoke(eventData);
+        
 
         rectTransform.SetAsLastSibling(); ;
     }
